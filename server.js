@@ -35,7 +35,7 @@ app.use(express.urlencoded({extended: true}))
  *
  * ...to parse the body of the HTTP requests from a JSON string  
  */
-app.use(express.json())
+app.use(express.json({strict: false}))
 
 /* Step 3.b 
  *
@@ -48,6 +48,7 @@ app.use(methodOverride('_method'))
  * use the `./public` directory to host static resources such as css and
  * image files 
  */
+app.use(express.static(__dirname+"/client/build"))
 app.use(express.static(__dirname+"/public"))
 
 /* Step 3.b
