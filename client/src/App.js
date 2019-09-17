@@ -14,18 +14,20 @@ const multipleUsers = (userinfo) => {
 
 function App() {
   const testUser = [{
-    name: "Lacy Adams",
-    originCity: "Norway",
+    name: "Name : Lacy Adams",
+    originCity: "Origin City: Norway",
     age: 19,
-    instagram: "@fixitfelix",
-    favoriteAnime: "Attack on Titan",
-    favoriteFood: "Ramen"
-  }, {name: "Mary Adams",
-  originCity: "Norway",
-  age: 19,
-  instagram: "@fixitfelix",
-  favoriteAnime: "Attack on Titan",
-  favoriteFood: "Ramen"} ]
+    instagram: "Instagram: @fixitfelix",
+    favoriteAnime: "Favorite Anime: Attack on Titan",
+    favoriteFood: "Favorite Food: Ramen"
+  }, {
+    name: "Name : Mary Adams",
+    originCity: "Origin City: Norway",
+    age: 19,
+    instagram: "Instagram: @fixitfelix",
+    favoriteAnime: "Favorite Anime: Attack on Titan",
+    favoriteFood: "Favorite Food: Ramen"
+  } ]
   return (
     <div>
       <h1>Hello World</h1>
