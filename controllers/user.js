@@ -7,6 +7,8 @@ const userRouter = express.Router()
 
 //HTTP Requests
 // 
+
+///////////////////GET ALL USERS/////////////////////////////
 userRouter.get('/', function (req, res) {
     userApi.getAllUsers().then((users) => {
         res.send(users) 
@@ -20,7 +22,6 @@ userRouter.get('/:userId', function(req,res){
   })
 
 /////////////////////ADD USER///////////////////////////////
-
 userRouter.post('/', function (req, res) {
     userApi.addNewUser(req.body).then((newUser) => {
         res.send(newUser)

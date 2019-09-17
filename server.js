@@ -18,7 +18,7 @@ const methodOverride = require('method-override')
  *
  */
 const { userRouter } = require('./controllers/user.js')
-
+const { animeRouter } = require('./controllers/anime.js')
 
 
 /* Step 3
@@ -64,7 +64,7 @@ app.set('view engine', 'hbs')
  * the paths defined in the router.
  */
 app.use('/feminaku', userRouter)
-
+app.use('/useranime', animeRouter)
 
 /* Step 5
  *
