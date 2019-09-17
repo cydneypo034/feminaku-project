@@ -20,16 +20,28 @@ userRouter.get('/new', function(req, res) {
       res.send(newUser)
     })
   })
-  
+
 userRouter.get('/:userId', function(req,res){
     userApi.getOneUser(req.body.userId).then((foundUser) => {
         res.send(foundUser);
     })
   })
 
+userRouter.post('/', function (req, res) {
+    userApi.addNewUser(req.body).then(() => {
+        res.send(200)
+    })
+})
+
+userRouter.put('/feminaku/:userId', function(req, res) {
+    userApi.updateUser(req.params.index, req.body).then(() => {
+    res.send(200)
+    })
+})
+
 userRouter.delete('/:userId', function(req,res){
-    userApi.deleteUser(req.params.userId).then((noUser) => {
-        res.send(noUser);
+    userApi.deleteUser(req.params.userId).then(() => {
+        res.send(200);
     })
   })
 module.exports = {
