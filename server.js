@@ -35,7 +35,7 @@ app.use(express.urlencoded({extended: true}))
  *
  * ...to parse the body of the HTTP requests from a JSON string  
  */
-app.use(express.json({strict: false}))
+app.use(express.json())
 
 /* Step 3.b 
  *

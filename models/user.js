@@ -1,17 +1,53 @@
 const mongoose = require('./connection.js')
 
-global.user = [];
+var UserSchema = new mongoose.Schema({
+    name: String,
+    originCity: String,
+    age: Number,
+    instagram: String,
+    favoriteAnime: String,
+    favoriteFood: String,
+})
 
-const getOneUser = () => global.user
+const UserCollection = mongoose.model('User', UserSchema)
 
-const addNewUser = (newUser) => global.user.push(newUser)
+function createUser() {
+    return UserCollection.create({
+        name: " ",
+        originCity: " ",
+        age: 0,
+        instagram: " ",
+        favoriteAnime: " ",
+        favoriteFood: " ",
+    })
+}
+function getAllUsers() {
+    return UserCollection.find()
+}
 
-const createUser = () => ""
+function deleteUser(noUsers) {
+    return UserCollection.findByIdAndDelete(noUsers)
+}
+
+function getOneUser(userOneId) {
+    return UserCollection.findById(userOneId)
+}
+
+function addNewUser(newUser) {
+    return UserCollection.create(newUser);
+}
+
+function editUser(userEditId, brandNewUser) {
+    return UserCollection.findByIdAndUpdate(userEditId, brandNewUser)
+}
 
 
 module.exports = {
     addNewUser,
     createUser,
-    getOneUser,
+    deleteUser,
+    editUser,
+    getAllUsers,
+    getOneUser
 }
 
