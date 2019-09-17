@@ -17,7 +17,7 @@ const methodOverride = require('method-override')
  * import routers from controllers/
  *
  */
-const { templateRouter } = require('./controllers/template.js')
+const { userRouter } = require('./controllers/user.js')
 
 
 
@@ -62,7 +62,7 @@ app.set('view engine', 'hbs')
  * add router for the application to use. The first argument is a prefix to all
  * the paths defined in the router.
  */
-app.use('/template', templateRouter)
+app.use('/feminaku', userRouter)
 
 
 /* Step 5
