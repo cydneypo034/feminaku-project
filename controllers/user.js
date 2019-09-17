@@ -22,12 +22,16 @@ userRouter.get('/new', function(req, res) {
   })
   
 userRouter.get('/:userId', function(req,res){
-    shopsApi.getOneUser(req.body.userId).then((foundUser) => {
+    userApi.getOneUser(req.body.userId).then((foundUser) => {
         res.send(foundUser);
     })
   })
 
-
+userRouter.delete('/:userId', function(req,res){
+    userApi.deleteUser(req.params.userId).then((noUser) => {
+        res.send(noUser);
+    })
+  })
 module.exports = {
     userRouter
 }
