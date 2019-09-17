@@ -31,17 +31,16 @@ userRouter.post('/', function (req, res) {
     })
 })
 
-
-
+/////////////////EDIT USER/////////////////////////////////
 userRouter.put('/feminaku/:userId', function(req, res) {
-    userApi.updateUser(req.params.index, req.body).then(() => {
-    res.send(200)
+    userApi.updateUser(req.params.index, req.body).then((brandnew) => {
+    res.send(brandnew)
     })
 })
 
 userRouter.delete('/:userId', function(req,res){
-    userApi.deleteUser(req.params.userId).then(() => {
-        res.send(200);
+    userApi.deleteUser(req.params.userId).then((nouser) => {
+        res.send(nouser);
     })
   })
 
