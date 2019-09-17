@@ -20,11 +20,7 @@ userRouter.get('/:userId', function(req,res){
   })
 
 /////////////////////ADD USER///////////////////////////////
-userRouter.get('/new', function(req, res) {
-    userApi.createUser().then((newUser) => {
-      res.send(newUser)
-    })
-  })
+
 userRouter.post('/', function (req, res) {
     userApi.addNewUser(req.body).then((newUser) => {
         res.send(newUser)
