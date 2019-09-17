@@ -4,6 +4,10 @@ userApi.getAllUsers().then((allUsers) => {
     console.log(allUsers)
 })
 
+userApi.getOneUser().then((oneUser) => {
+    console.log(oneUser)
+})
+
 userApi.createUser().then((newUser) => {
     console.log(newUser)
 })
