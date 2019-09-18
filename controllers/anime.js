@@ -31,6 +31,18 @@ animeRouter.get('/:animeId', (req, res) => {
         })
     })
 })
+animeRouter.post('/', (req, res) => {
+    animeApi.addNewAnime(req.body)
+    .then(newAnime => {
+        res.json(newAnime)
+    })
+    .catch(err => {
+        res.json({
+            confirmation: 'fail',
+            message: err.message
+        })
+    })
+})
 /*
 ///////////////////GET ALL USERS/////////////////////////////
 animeRouter.get('/', function (req, res) {

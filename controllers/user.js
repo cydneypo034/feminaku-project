@@ -32,15 +32,11 @@ userRouter.get('/:userId', (req, res) => {
         })
     })
 })
-/*
+
 userRouter.post('/', (req, res) => {
-    
-    user.create(req.body)
+    userApi.addNewUser(req.body)
     .then(newUser => {
-        res.json({
-            confirmation: 'success',
-            data: newUser
-        })
+        res.json(newUser)
     })
     .catch(err => {
         res.json({
@@ -49,8 +45,8 @@ userRouter.post('/', (req, res) => {
         })
     })
 })
-*/
-/*
+
+/* example
 userRouter.get('/', (req,res) => {
     res.json({
         confirmation: 'success',
