@@ -63,9 +63,9 @@ app.set('view engine', 'hbs')
  * add router for the application to use. The first argument is a prefix to all
  * the paths defined in the router.
  */
-app.use('/feminaku', userRouter)
-app.use('/femanime', animeRouter)
-app.use('/femclothes', clothesRouter)
+app.use('/feminaku/user', userRouter)
+app.use('/feminaku/anime', animeRouter)
+app.use('/feminaku/clothes', clothesRouter)
 
 /* Step 5
  *
