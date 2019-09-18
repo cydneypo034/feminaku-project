@@ -7,7 +7,31 @@ const animeRouter = express.Router()
 
 //HTTP Requests
 // 
-
+animeRouter.get('/', (req, res) => {
+    animeApi.getAllAnime()
+    .then(animes => {
+        res.json(animes)
+    })
+    .catch(err => {
+        res.json({
+            confirmation: 'fail',
+            message: err.message
+        })
+    })
+})
+animeRouter.get('/:animeId', (req, res) => {
+    animeApi.getOneUser(req.params.animeId)
+    .then(anime => {
+        res.json(anime)
+    })
+    .catch(err => {
+        res.json({
+            confirmation: 'fail',
+            message: err.message
+        })
+    })
+})
+/*
 ///////////////////GET ALL USERS/////////////////////////////
 animeRouter.get('/', function (req, res) {
     animeApi.getAllAnime().then((shows) => {
@@ -43,7 +67,7 @@ animeRouter.delete('/:animeId', function(req,res){
         res.send(noAnime);
     })
   })
-
+*/
 
 module.exports = {
     animeRouter

@@ -19,7 +19,7 @@ const methodOverride = require('method-override')
  */
 const { userRouter } = require('./controllers/user.js')
 const { animeRouter } = require('./controllers/anime.js')
-
+const { clothesRouter } = require('./controllers/clothes.js')
 
 /* Step 3
  *
@@ -65,7 +65,7 @@ app.set('view engine', 'hbs')
  */
 app.use('/feminaku', userRouter)
 app.use('/femanime', animeRouter)
-
+app.use('/femclothes', clothesRouter)
 
 /* Step 5
  *

@@ -1,53 +1,41 @@
 const mongoose = require('./connection.js')
 
 var UserSchema = new mongoose.Schema({
-    name: String,
-    originCity: String,
-    age: Number,
-    instagram: String,
-    favoriteAnime: String,
-    favoriteFood: String,
+    name: {type:String, trim: true, default: ''},
+    originCity: {type: String, trim: true, default: ''},
+    age: {type: Number, trim: true, default: ''},
+    instagram: {type: String, trim: true, default: ''},
+    favoriteAnime: {type: String, trim: true, default: ''},
+    favoriteFood: {type: String, trim: true, default: ''},
 })
 
-const UserCollection = mongoose.model('User', UserSchema)
+const UserCollection = mongoose.model('User', UserSchema)
 
-function createUser() {
-    return UserCollection.create({
-        name: " ",
-        originCity: " ",
-        age: 0,
-        instagram: " ",
-        favoriteAnime: " ",
-        favoriteFood: " ",
-    })
-}
-function getAllUsers() {
-    return UserCollection.find()
+
+function getAllUsers() {
+    return UserCollection.find()
 }
 
-function deleteUser(noUsers) {
-    return UserCollection.findByIdAndDelete(noUsers)
+function deleteUser(noUsers) {
+    return UserCollection.findByIdAndDelete(noUsers)
 }
 
-function getOneUser(userOneId) {
-    return UserCollection.findById(userOneId)
+function getOneUser(userOneId) {
+    return UserCollection.findById(userOneId)
 }
 
-function addNewUser(newUser) {
-    return UserCollection.create(newUser);
+function addNewUser(newUser) {
+    return UserCollection.create(newUser);
 }
 
-function editUser(userEditId, brandNewUser) {
-    return UserCollection.findByIdAndUpdate(userEditId, brandNewUser)
+function editUser(userEditId, brandNewUser) {
+    return UserCollection.findByIdAndUpdate(userEditId, brandNewUser)
 }
-
-
 module.exports = {
     addNewUser,
-    createUser,
-    deleteUser,
-    editUser,
-    getAllUsers,
-    getOneUser
+    deleteUser,
+    editUser,
+    getAllUsers,
+    getOneUser
 }
 

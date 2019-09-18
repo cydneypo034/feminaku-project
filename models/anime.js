@@ -1,26 +1,15 @@
 const mongoose = require('./connection.js')
 
 var AnimeSchema = new mongoose.Schema({
-    name: String,
-    favoriteSeason: String,
-    numberOfSeasons: Number,
-    favoriteCharacter: String,
-    animeGenre: String,
-    characterCosplay: String,
+    name: {type: String, trim: true, default: ''},
+    favoriteSeason: {type: String, trim: true, default: ''},
+    numberOfSeasons: {type: Number, trim: true, default: ''},
+    favoriteCharacter: {type: String, trim: true, default: ''},
+    animeGenre: {type: String, trim: true, default: ''},
+    characterCosplay: {type: String, trim: true, default: ''},
 })
 
 const AnimeCollection = mongoose.model('Anime', AnimeSchema)
-
-function createAnime(){
-    return AnimeCollection.create({
-        name: " ",
-        favoriteSeason: " ",
-        numberOfSeasons: 0,
-        favoriteCharacter: " ",
-        animeGenre: " ",
-        characterCosplay: " ",
-    })
-}
 
 function getAllAnime() {
     return AnimeCollection.find()
@@ -45,7 +34,6 @@ function editAnime(animeEditId, brandNewAnime) {
 
 module.exports = {
     addNewAnime,
-    createAnime,
     deleteAnime,
     editAnime,
     getAllAnime,

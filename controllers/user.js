@@ -8,39 +8,56 @@ const userRouter = express.Router()
 //HTTP Requests
 // 
 
-///////////////////GET ALL USERS/////////////////////////////
-userRouter.get('/', function (req, res) {
-    userApi.getAllUsers().then((users) => {
-        res.send(users) 
+userRouter.get('/', (req, res) => {
+    userApi.getAllUsers()
+    .then(users => {
+        res.json(users)
+    })
+    .catch(err => {
+        res.json({
+            confirmation: 'fail',
+            message: err.message
+        })
     })
 })
-/////////////////////GET ONE USER//////////////////////////
-userRouter.get('/:userId', function(req,res){
-    userApi.getOneUser(req.params.userId).then((foundUser) => {
-        res.send(foundUser);
+userRouter.get('/:userId', (req, res) => {
+    userApi.getOneUser(req.params.userId)
+    .then(user => {
+        res.json(user)
     })
-  })
-
-/////////////////////ADD USER///////////////////////////////
-userRouter.post('/', function (req, res) {
-    userApi.addNewUser(req.body).then((newUser) => {
-        res.send(newUser)
-    })
-})
-
-/////////////////EDIT USER/////////////////////////////////
-userRouter.put('/:userId', function(req, res) {
-    userApi.editUser(req.params.userId, req.body).then((brandnew) => {
-    res.send(brandnew)
+    .catch(err => {
+        res.json({
+            confirmation: 'fail',
+            message: err.message
+        })
     })
 })
-
-////////////////////DELETE USER/////////////////////////////
-userRouter.delete('/:userId', function(req,res){
-    userApi.deleteUser(req.params.userId).then((nouser) => {
-        res.send(nouser);
+/*
+userRouter.post('/', (req, res) => {
+    
+    user.create(req.body)
+    .then(newUser => {
+        res.json({
+            confirmation: 'success',
+            data: newUser
+        })
     })
-  })
+    .catch(err => {
+        res.json({
+            confirmation: 'fail',
+            message: err.message
+        })
+    })
+})
+*/
+/*
+userRouter.get('/', (req,res) => {
+    res.json({
+        confirmation: 'success',
+        data: 'this is the profile'
+    })
+})
+*/
 
 module.exports = {
     userRouter
