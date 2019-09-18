@@ -64,7 +64,8 @@ app.set('view engine', 'hbs')
  * the paths defined in the router.
  */
 app.use('/feminaku', userRouter)
-app.use('/useranime', animeRouter)
+app.use('/femanime', animeRouter)
+
 
 /* Step 5
  *

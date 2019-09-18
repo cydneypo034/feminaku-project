@@ -11,30 +11,25 @@ const animeRouter = express.Router()
 ///////////////////GET ALL USERS/////////////////////////////
 animeRouter.get('/', function (req, res) {
     animeApi.getAllAnime().then((shows) => {
-        res.send(shows) 
+        res.send(shows)
     })
 })
-
 /////////////////////GET ONE USER//////////////////////////
 animeRouter.get('/:animeId', function(req,res){
     animeApi.getOneAnime(req.params.animeId).then((foundAnime) => {
         res.send(foundAnime);
     })
-  })
-
-/////////////////////ADD USER///////////////////////////////
-animeRouter.get('/new', function (req, res){
-    animeApi.createAnime().then((newAnime) => {
-        res.send(newAnime)
-    })
 })
-animeRouter.post('/new', function (req, res) {
+/////////////////////ADD USER///////////////////////////////
+
+animeRouter.post('/', function(req, res) {
     animeApi.addNewAnime(req.body).then((newAnime) => {
-        res.send(newAnime)
+        res.send(newAnime);
     })
 })
 
 /////////////////EDIT USER/////////////////////////////////
+
 animeRouter.put('/:animeId', function(req, res) {
     animeApi.editAnime(req.params.animeId, req.body).then((generAnime) => {
     res.send(generAnime)
@@ -42,12 +37,16 @@ animeRouter.put('/:animeId', function(req, res) {
 })
 
 ////////////////////DELETE USER/////////////////////////////
+
 animeRouter.delete('/:animeId', function(req,res){
     animeApi.deleteAnime(req.params.animeId).then((noAnime) => {
         res.send(noAnime);
     })
   })
 
+
 module.exports = {
     animeRouter
 }
+
+
