@@ -56,8 +56,19 @@ clothesRouter.put('/:clothesId', (req, res) => {
         })
     })
 })
-
-/* DO NOt Use
+clothesRouter.delete('/:clothesId', (req, res) => {
+    clothesApi.deleteClothes(req.params.clothesId)
+    .then(deletedClothes => {
+        res.json(deletedClothes)
+    })
+    .catch(err => {
+        res.json({
+            confirmation: 'fail',
+            message: err.message
+        })
+    })
+})
+/*
 ///////////////////GET ALL USERS/////////////////////////////
 clothesRouter.get('/', function (req, res) {
     clothesApi.getAllClothes().then((clothes) => {

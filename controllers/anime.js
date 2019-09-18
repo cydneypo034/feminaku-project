@@ -67,7 +67,7 @@ animeRouter.delete('/:animeId', (req, res) => {
         })
     })
 })
-/*
+/* 
 ///////////////////GET ALL USERS/////////////////////////////
 animeRouter.get('/', function (req, res) {
     animeApi.getAllAnime().then((shows) => {

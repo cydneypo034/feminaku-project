@@ -70,7 +70,7 @@ userRouter.delete('/:userId', (req, res) => {
         })
     })
 })
-/* example
+/* example: do not use
 userRouter.get('/', (req,res) => {
     res.json({
         confirmation: 'success',
