@@ -55,6 +55,18 @@ animeRouter.put('/:animeId', (req, res) => {
         })
     })
 })
+animeRouter.delete('/:animeId', (req, res) => {
+    animeApi.deleteAnime(req.params.animeId)
+    .then(deletedAnime => {
+        res.json(deletedAnime)
+    })
+    .catch(err => {
+        res.json({
+            confirmation: 'fail',
+            message: err.message
+        })
+    })
+})
 /*
 ///////////////////GET ALL USERS/////////////////////////////
 animeRouter.get('/', function (req, res) {

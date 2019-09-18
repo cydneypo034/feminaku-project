@@ -56,7 +56,8 @@ clothesRouter.put('/:clothesId', (req, res) => {
         })
     })
 })
-/*
+
+/* DO NOt Use
 ///////////////////GET ALL USERS/////////////////////////////
 clothesRouter.get('/', function (req, res) {
     clothesApi.getAllClothes().then((clothes) => {
