@@ -43,6 +43,18 @@ animeRouter.post('/', (req, res) => {
         })
     })
 })
+animeRouter.put('/:animeId', (req, res) => {
+    animeApi.editAnime(req.params.animeId, req.body)
+    .then(updatedAnime => {
+        res.json(updatedAnime)
+    })
+    .catch(err => {
+        res.json({
+            confirmation: 'fail',
+            massage: err.message
+        })
+    })
+})
 /*
 ///////////////////GET ALL USERS/////////////////////////////
 animeRouter.get('/', function (req, res) {

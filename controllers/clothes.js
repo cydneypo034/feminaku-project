@@ -31,6 +31,31 @@ clothesRouter.get('/:clothesId', (req, res) => {
         })
     })
 })
+clothesRouter.post('/', (req, res) => {
+    clothesApi.addNewClothes(req.body)
+    .then(newClothes => {
+        res.json(newClothes)
+    })
+    .catch(err => {
+        res.json({
+            confirmation: 'fail',
+            message: err.message
+        })
+    })
+})
+
+clothesRouter.put('/:clothesId', (req, res) => {
+    clothesApi.editClothes(req.params.clothesId, req.body)
+    .then(updatedClothes => {
+        res.json(updatedClothes)
+    })
+    .catch(err => {
+        res.json({
+            confirmation: 'fail',
+            massage: err.message
+        })
+    })
+})
 /*
 ///////////////////GET ALL USERS/////////////////////////////
 clothesRouter.get('/', function (req, res) {

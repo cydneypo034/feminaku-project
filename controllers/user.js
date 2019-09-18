@@ -46,6 +46,18 @@ userRouter.post('/', (req, res) => {
     })
 })
 
+userRouter.put('/:userId', (req, res) => {
+    userApi.editUser(req.params.userId, req.body)
+    .then(updatedUser => {
+        res.json(updatedUser)
+    })
+    .catch(err => {
+        res.json({
+            confirmation: 'fail',
+            massage: err.message
+        })
+    })
+})
 /* example
 userRouter.get('/', (req,res) => {
     res.json({
