@@ -14,7 +14,7 @@ class NavBar extends React.Component {
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/about">About</Nav.Link>
                 <Nav.Link href="/adduser">Add User</Nav.Link>
-                <Nav.Link href="/allusers">All Users</Nav.Link>
+                <Nav.Link href="/api/user">All Users</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
             </Navbar> 
