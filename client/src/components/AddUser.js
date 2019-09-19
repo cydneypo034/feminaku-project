@@ -21,6 +21,7 @@ class AddUserForm extends React.Component {
         evnt.preventDefault();
 
         this.props.addUser(this.state.newUser)
+
     }
 
     render() {
@@ -68,4 +69,19 @@ class AddUserForm extends React.Component {
     }
 }
 
+
+
 export default AddUserForm;
+
+/*
+        this.props.addUser(this.state.newUser)
+                const url = "http://localhost:3000/feminaku/user"
+        const data = {name: this.state.name}
+        fetch(url, 
+            {method: 'POST',
+            body: JSON.stringify(data),
+            headers: {'Content-Type': 'application/json'}
+        })
+        .then(res => res.json())
+        .catch(error => console.error('Error', error))
+*/
