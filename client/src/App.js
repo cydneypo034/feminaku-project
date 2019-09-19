@@ -5,6 +5,10 @@ import About from './components/About.js';
 import  NavigationBar from './components/NavigationBar.js';
 import AddUser from './components/AddUser.js';
 import AllUsers from './components/AllUsers.js';
+import AllAnime from './components/allAnime.js';
+import AllClothes from './components/allClothes.js';
+
+
 import './App.css';
 
 class App extends React.Component {
@@ -18,6 +22,8 @@ class App extends React.Component {
             <Route path="/about" component={About} />
             <Route path="/adduser" component={AddUser} />
             <Route path="/api/user" component={AllUsers} />
+            <Route path="/api/anime" component={AllAnime} />
+            <Route path="/api/clothes" component={AllClothes} />
           </Switch>
         </Router>
       </React.Fragment>
