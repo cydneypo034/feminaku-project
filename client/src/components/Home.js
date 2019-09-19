@@ -8,36 +8,43 @@ import Yumkeo from './images2/yumeko.gif';
 class Home extends React.Component {
     render() {
         return (
-            <Carousel>
-                <Carousel.Item>
+            <Carousel className="carousel-div" interval="2000" fade="true" indicators={false} controls={false}>
+                <Carousel.Item className="car-images">
                     <img
-                    className="bulma"
+                    className="sailormoon"
+                    width="830"
+                    height="360"
                     src={SailorMoon}
-                    width="100%"
                     alt="Bulma"
                     />
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
                     className="Dawn"
+                    width="830"
+                    height="360"
+
                     src={Dawn}
-                    width="100%"
                     alt="Dawn"
                     />
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
                     className="Shiinoa"
+                    width="830"
+                    height="360"
+
                     src={Shiinoa}
-                    width="100%"
                     alt="Shiinoa"
                     />
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
                     className="Yumeko"
+                    width="830"
+                    height="360"
+
                     src={Yumkeo}
-                    width="100%"
                     alt="Yumeko"
                     />
                 </Carousel.Item>

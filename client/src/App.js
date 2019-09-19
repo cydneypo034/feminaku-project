@@ -4,7 +4,8 @@ import Home from './components/Home.js';
 import About from './components/About.js';
 import  NavigationBar from './components/NavigationBar.js';
 import AddUser from './components/AddUser.js';
-import AllUsers from './components/AllUsers.js'
+import AllUsers from './components/AllUsers.js';
+import './App.css';
 
 class App extends React.Component {
   render() {
