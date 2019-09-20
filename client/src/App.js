@@ -1,8 +1,8 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import Home from './components/Home.js';
-import About from './components/About.js';
+
 import "bootstrap/dist/css/bootstrap.min.css";
+import theseUsers from './components/user-lists.js'
 import createUser from './components/createUser.js';
 import user from './components/user.js';
 
@@ -18,7 +18,7 @@ class App extends React.Component {
           <div className="navbar-collapse">
             <ul className="navbar-nav mr-auto">
               <li className="navbar-item">
-                <Link to="/" className="nav-link">All Users</Link>
+                <Link to="/allusers" className="nav-link">All Users</Link>
               </li>
               <li className="navbar-item">
                 <Link to="/create" className="nav-link">Create User</Link>
@@ -28,10 +28,11 @@ class App extends React.Component {
         </nav>
         <br />
         <Route path="/" exact component={user} />
+        <Route path="/allusers" component={theseUsers} />
         <Route path="/create" component={createUser} />
-        <About />
-        <Home />
         
+
+
         </div>
         
         </Router>

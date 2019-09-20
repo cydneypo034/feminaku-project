@@ -1,12 +1,12 @@
 const mongoose = require('./connection.js')
 
 var UserSchema = new mongoose.Schema({
-    name: {type:String, trim: true, default: ''},
-    originCity: {type: String, trim: true, default: ''},
-    age: {type: Number, trim: true, default: ''},
-    instagram: {type: String, trim: true, default: ''},
-    favoriteAnime: {type: String, trim: true, default: ''},
-    favoriteFood: {type: String, trim: true, default: ''},
+    name: String,
+    originCity: String,
+    age: String,
+    instagram: String,
+    favoriteAnime: String,
+    favoriteFood: String,
 })
 
 const UserCollection = mongoose.model('User', UserSchema)
@@ -39,3 +39,11 @@ module.exports = {
     getOneUser
 }
 
+/*
+name: {type:String, trim: true, default: ''},
+    originCity: {type: String, trim: true, default: ''},
+    age: {type: Number, trim: true, default: ''},
+    instagram: {type: String, trim: true, default: ''},
+    favoriteAnime: {type: String, trim: true, default: ''},
+    favoriteFood: {type: String, trim: true, default: ''},
+*/
