@@ -12,8 +12,8 @@ class Home extends React.Component {
                 <Carousel.Item className="car-images">
                     <img
                     className="sailormoon"
-                    width="830"
-                    height="360"
+                    width="1110"
+                    height="390"
                     src={SailorMoon}
                     alt="Bulma"
                     />
@@ -21,8 +21,8 @@ class Home extends React.Component {
                 <Carousel.Item>
                     <img
                     className="Dawn"
-                    width="830"
-                    height="360"
+                    width="1110"
+                    height="390"
 
                     src={Dawn}
                     alt="Dawn"
@@ -31,8 +31,8 @@ class Home extends React.Component {
                 <Carousel.Item>
                     <img
                     className="Shiinoa"
-                    width="830"
-                    height="360"
+                    width="1110"
+                    height="390"
 
                     src={Shiinoa}
                     alt="Shiinoa"
@@ -41,8 +41,8 @@ class Home extends React.Component {
                 <Carousel.Item>
                     <img
                     className="Yumeko"
-                    width="830"
-                    height="360"
+                    width="1110"
+                    height="390"
 
                     src={Yumkeo}
                     alt="Yumeko"

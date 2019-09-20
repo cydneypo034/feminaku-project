@@ -17,21 +17,19 @@
 
 .about-centered{
   position: absolute;
-  top: 70%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'Cute Font', cursive;
   font-size: 100px;
-  color: white;
 }
 
 .about-paragraph {
   position: absolute;
-  top: 90%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
-  color: white;
   background-color: lightblue;
 }
