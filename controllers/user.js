@@ -9,10 +9,9 @@ const userRouter = express.Router()
 // 
 
 userRouter.get('/', (req, res) => {
-    userApi.getAllUsers()
-    .then(users => {
+    userApi.getAllUsers().then(users => {
         res.json(users)
-    })
+})
     .catch(err => {
         res.json({
             confirmation: 'fail',
@@ -20,11 +19,11 @@ userRouter.get('/', (req, res) => {
         })
     })
 })
+
 userRouter.get('/:userId', (req, res) => {
-    userApi.getOneUser(req.params.userId)
-    .then(user => {
-        res.json(user)
-    })
+    userApi.getOneUser(req.params.userId) .then(user => {
+    res.json(user)
+})
     .catch(err => {
         res.json({
             confirmation: 'fail',
@@ -34,8 +33,7 @@ userRouter.get('/:userId', (req, res) => {
 })
 
 userRouter.post('/', (req, res) => {
-    userApi.addNewUser(req.body)
-    .then(newUser => {
+    userApi.addNewUser(req.body).then(newUser => {
         res.json(newUser)
     })
     .catch(err => {
@@ -47,8 +45,7 @@ userRouter.post('/', (req, res) => {
 })
 
 userRouter.put('/:userId', (req, res) => {
-    userApi.editUser(req.params.userId, req.body)
-    .then(updatedUser => {
+    userApi.editUser(req.params.userId, req.body).then(updatedUser => {
         res.json(updatedUser)
     })
     .catch(err => {
@@ -59,8 +56,7 @@ userRouter.put('/:userId', (req, res) => {
     })
 })
 userRouter.delete('/:userId', (req, res) => {
-    userApi.deleteUser(req.params.userId)
-    .then(deletedUser => {
+    userApi.deleteUser(req.params.userId).then(deletedUser => {
         res.json(deletedUser)
     })
     .catch(err => {
@@ -70,6 +66,8 @@ userRouter.delete('/:userId', (req, res) => {
         })
     })
 })
+
+
 /* example: do not use
 userRouter.get('/', (req,res) => {
     res.json({
@@ -77,7 +75,43 @@ userRouter.get('/', (req,res) => {
         data: 'this is the profile'
     })
 })
+///////////////////GET ALL USERS/////////////////////////////
+userRouter.get('/', function (req, res) {
+    userApi.getAllUsers().then((users) => {
+        res.send(users) 
+    })
+})
+
+/////////////////////GET ONE USER//////////////////////////
+userRouter.get('/:userId', function(req,res){
+    userApi.getOneUser(req.params.userId).then((foundUser) => {
+        res.send(foundUser);
+    })
+  })
+
+/////////////////////ADD USER///////////////////////////////
+userRouter.post('/', function (req, res) {
+    userApi.addNewUser(req.body).then((newUser) => {
+        res.send(newUser)
+    })
+})
+
+/////////////////EDIT USER/////////////////////////////////
+userRouter.put('/:userId', function(req, res) {
+    userApi.editUser(req.params.userId, req.body).then((brandnew) => {
+    res.send(brandnew)
+    })
+})
+
+////////////////////DELETE USER/////////////////////////////
+userRouter.delete('/:userId', function(req,res){
+    userApi.deleteUser(req.params.userId).then((nouser) => {
+        res.send(nouser);
+    })
+  })
 */
+
+
 
 module.exports = {
     userRouter
