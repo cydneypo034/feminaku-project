@@ -1,28 +1,27 @@
 import React from 'react';
 import axios from 'axios';
 
-class Anime extends React.Component {
+class Users extends React.Component {
     
     state = {
-        anime: []
+        users: []
     }
 
     componentDidMount() {
-        axios.get(`/api/anime`)
+        axios.get('/api/user')
         .then(res => {
-            const anime = res.data;
-            this.setState( {anime})
+            this.setState( {res} )
         })
     }
 
     render () {
         return (
             <ul>
-                { this.state.anime.map(anime => <li>{anime.name}</li>)}
+                { this.state.users.map(user => <li>{user.name}</li>)}
             </ul>
         )
     }
 }
 
 
-export default Anime;
+export default Users;

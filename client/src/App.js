@@ -3,9 +3,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from './components/Home.js';
 import About from './components/About.js';
 import NavigationBar from './components/NavigationBar.js';
-import AllAnime from './components/allAnime.js';
-import AllClothes from './components/allClothes.js';
-
+import users from './components/users.js';
 
 import './App.css';
 
@@ -14,13 +12,13 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <NavigationBar />
+        <About />
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/api/anime" component={AllAnime} />
-            <Route path="/api/clothes" component={AllClothes} />
+            <Route exact path="/users" component={users} />
           </Switch>
+        
         </Router>
 
       </React.Fragment>
