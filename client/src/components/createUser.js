@@ -28,12 +28,6 @@ class createUsers extends React.Component {
         event.preventDefault();
         
         console.log(`Form submitted:`)
-        console.log(`name: ${this.state.name}`)
-        console.log(`originCity: ${this.state.originCity}`)
-        console.log(`age: ${this.state.age}`)
-        console.log(`instagram: ${this.state.instagram}`)
-        console.log(`favoriteAnime: ${this.state.favoriteAnime}`)
-        console.log(`favoriteFood: ${this.state.favoriteFood}`)
 
         const myNewUser = {
             name: this.state.name,

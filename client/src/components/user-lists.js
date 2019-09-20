@@ -44,7 +44,7 @@ class theseUsers extends React.Component {
         render () {
             return (
                 <div>
-                    <h1 className="fem-welcome">How a Look at our Wonderful Community!</h1>
+                    <h1 className="fem-welcome">Have a Look at our Wonderful Community!</h1>
                     <table className="table responsive" >
                         <thread>
                             <tr>

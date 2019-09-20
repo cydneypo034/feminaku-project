@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 import theseUsers from './components/user-lists.js'
 import createUser from './components/createUser.js';
+import editUser from './components/editUser.js';
 import user from './components/user.js';
 
 import './App.css';
@@ -30,7 +31,7 @@ class App extends React.Component {
         <Route path="/" exact component={user} />
         <Route path="/allusers" component={theseUsers} />
         <Route path="/create" component={createUser} />
-        
+        <Route path="/edit/:id" component={editUser} />
 
 
         </div>
