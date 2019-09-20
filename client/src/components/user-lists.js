@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import Axios from 'axios';
 
 const User = props => (
@@ -13,6 +13,7 @@ const User = props => (
         <td>
             <Link to={"/edit/"+props.user._id}>Edit</Link>
         </td>
+
     </tr>
 )
 class theseUsers extends React.Component {
@@ -34,24 +35,20 @@ class theseUsers extends React.Component {
         })
     }
 
+
     userList() {
-        return this.state.users.map(function(currentUser, i){
-            return <User user={currentUser} key={i} />;
+        return this.state.users.map(function(currentUser){
+            return <User user={currentUser} />;
         })
     }
         render () {
             return (
                 <div>
-                    <h1>My Users</h1>
-                    <table className="table table-striped" style={{marginTop: 20}} >
+                    <h1 className="fem-welcome">How a Look at our Wonderful Community!</h1>
+                    <table className="table responsive" >
                         <thread>
                             <tr>
                                 <th>Name</th>
-                                <th>Origin City</th>
-                                <th>Age</th>
-                                <th>Instagram</th>
-                                <th>Favorite Anime</th>
-                                <th>Favorite Food</th>
                             </tr>
                         </thread>
                         <tbody>

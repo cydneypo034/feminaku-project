@@ -10,7 +10,7 @@ class Users extends React.Component {
     render () {
         return (
             <div>
-                <h1>Feminaku</h1>
+             <h1 className="fem-welcome">Welcome to Feminaku!</h1>
                 <About />
                 <Home />
                 

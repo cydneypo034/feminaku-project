@@ -61,36 +61,36 @@ class createUsers extends React.Component {
         return (
             <div>
             
-                <h1>Create Users</h1>
+                <h1 className="fem-welcome">Come Join the Family! Enter Your Info Below!</h1>
                 <form onSubmit={this.handleSubmitInput}>
                     <input type="text"
                     name="name"
-                    placeholder="User's Name"
+                    placeholder="Your Name"
                     onChange={this.handleChangeInput}
                    />
                    <input type="text"
                     name="originCity"
-                    placeholder="User's City"
+                    placeholder="Your City"
                     onChange={this.handleChangeInput}
                    />
                    <input type="number"
                     name="age"
-                    placeholder="User's Age"
+                    placeholder="Your Age"
                     onChange={this.handleChangeInput}
                    />
                    <input type="text"
                     name="instagram"
-                    placeholder="User's Instagram"
+                    placeholder="Your Instagram"
                     onChange={this.handleChangeInput}
                    />
                    <input type="text"
                     name="favoriteAnime"
-                    placeholder="User's Favorite Anime"
+                    placeholder="Your Favorite Anime"
                     onChange={this.handleChangeInput}
                    />
                    <input type="text"
                     name="favoriteFood"
-                    placeholder="User's Favorite Food"
+                    placeholder="Your Favorite Food"
                     onChange={this.handleChangeInput}
                    />
                    <input type="submit" value="Add User" />
