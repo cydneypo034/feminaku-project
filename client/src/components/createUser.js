@@ -1,27 +1,49 @@
 import React from 'react';
 import Axios from 'axios';
 
-class createUsers extends React.Component {
+class CreateUsers extends React.Component {
 
     constructor(props) {
         super(props);
-
         
+        this.onChangeName = this.onChangeName.bind(this)
+        this.onChangeCityAndState = this.onChangeCityAndState.bind(this)
+        this.onChangeAge = this.onChangeAge.bind(this)
+        this.onChangeSocialMedia = this.onChangeSocialMedia.bind(this)
+        this.onChangeImageURL = this.onChangeImageURL.bind(this)
+
         this.state = {
             name: ' ',
-            originCity: ' ',
+            cityAndState: ' ',
             age: 0,
-            instagram: ' ',
-            favoriteAnime: ' ',
-            favoriteFood: ' '
+            socialMedia: ' ',
+        }
     }
+    onChangeName(e) {
+        this.setState({
+            name: e.target.value
+        })
+    }
+    onChangeCityAndState(e) {
+        this.setState({
+            cityAndState: e.target.value
+        })
+    }
+    onChangeAge(e) {
+        this.setState({
+            age: e.target.value
+        })
+    }
+    onChangeSocialMedia(e) {
+        this.setState({
+            socialMedia: e.target.value
+        })
     }
 
-    handleChangeInput = (event) => {
-        let newUser = {...this.state.newUser}
-
-        newUser[event.target.name] = event.target.value
-        this.setState({ newUser })
+    onChangeImageURL(e) {
+        this.setState({
+            imageURL: e.target.value
+        })
     }
 
     handleSubmitInput = (event) => {
@@ -29,25 +51,24 @@ class createUsers extends React.Component {
         
         console.log(`Form submitted:`)
 
+        //for using axios to grab the data from the api
         const myNewUser = {
             name: this.state.name,
-            originCity: this.state.originCity,
+            cityAndState: this.state.cityAndState,
             age: this.state.age,
-            instagram: this.state.instagram,
-            favoriteAnime: this.state.favoriteAnime,
-            favoriteFood: this.state.favoriteFood
+            socialMedia: this.state.socialMedia,
+            imageURL: this.state.imageURL
         };
-
+        //for using axios to grab the data from the api
         Axios.post('http://localhost:3000/api/user', myNewUser)
         .then(res => console.log(res.data))
 
         this.setState({
             name: '',
-            originCity: '',
+            cityAndState: '',
             age: 0,
-            instagram: '',
-            favoriteAnime: '',
-            favoriteFood: ''
+            socialMedia: '',
+            imageURL: ''
         })
     }
 
@@ -57,74 +78,35 @@ class createUsers extends React.Component {
             
                 <h1 className="fem-welcome">Come Join the Family! Enter Your Info Below!</h1>
                 <form onSubmit={this.handleSubmitInput}>
+                    <label>Name</label>
                     <input type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    onChange={this.handleChangeInput}
+                    className="form-control"
+                    value={this.state.name}
+                    onChange={this.onChangeName}
                    />
+                   <label>City and State</label>
                    <input type="text"
-                    name="originCity"
-                    placeholder="Your City"
-                    onChange={this.handleChangeInput}
+                    className="form-control"
+                    value={this.state.cityAndState}
+                    onChange={this.onChangeCityAndState}
                    />
+                   <label>Age</label>
                    <input type="number"
-                    name="age"
-                    placeholder="Your Age"
-                    onChange={this.handleChangeInput}
+                    className="form-control"
+                    value={this.state.age}
+                    onChange={this.onChangeAge}
                    />
+                   <label>Social Media</label>
                    <input type="text"
-                    name="instagram"
-                    placeholder="Your Instagram"
-                    onChange={this.handleChangeInput}
+                    className="form-control"
+                    value={this.state.socialMedia}
+                    onChange={this.onChangeSocialMedia}
                    />
-                   <input type="text"
-                    name="favoriteAnime"
-                    placeholder="Your Favorite Anime"
-                    onChange={this.handleChangeInput}
-                   />
-                   <input type="text"
-                    name="favoriteFood"
-                    placeholder="Your Favorite Food"
-                    onChange={this.handleChangeInput}
-                   />
+                   <label>User's Image</label>
                    <input type="submit" value="Add User" />
                 </form>
                 </div>
         )
     }
 }
-
-
-export default createUsers;
-
-/*
-class App2 extends React.Component {
-    state = {
-        name: 'Felicia Hampton',
-        originCity: 'Baltimore',
-        age: 20,
-        instagram: '@fixitfelicia',
-        favoriteAnime: 'Sailor Moon',
-        favoriteFood: 'Poke Bowls'
-    }
-
-    addNewUser = (brandNewUser) => {
-        let user = {...this.state.user}
-
-        user.name.push(brandNewUser)
-        this.setState( {user} )
-    }
-
-    render() {
-        return (
-            <div>
-                <h1>New Users</h1>
-                <createUsers 
-                addUser={this.addNewUser} />
-            </div>
-        )
-    }
-
-}
-
-*/
+export default CreateUsers;

@@ -5,11 +5,9 @@ import Axios from 'axios';
 const User = props => (
     <tr>
         <td>{props.user.name}</td>
-        <td>{props.user.originCity}</td>
+        <td>{props.user.cityAndState}</td>
         <td>{props.user.age}</td>
-        <td>{props.user.instagram}</td>
-        <td>{props.user.favoriteAnime}</td>
-        <td>{props.user.favoriteFood}</td>
+        <td>{props.user.socialMedia}</td>
         <td>
             <Link to={"/edit/"+props.user._id}>Edit</Link>
         </td>
@@ -45,10 +43,9 @@ class theseUsers extends React.Component {
             return (
                 <div>
                     <h1 className="fem-welcome">Have a Look at our Wonderful Community!</h1>
-                    <table className="table responsive" >
+                    <table className="table responsive">
                         <thread>
                             <tr>
-                                <th>Name</th>
                             </tr>
                         </thread>
                         <tbody>

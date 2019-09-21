@@ -2,11 +2,10 @@ const mongoose = require('./connection.js')
 
 var UserSchema = new mongoose.Schema({
     name: String,
-    originCity: String,
-    age: String,
-    instagram: String,
-    favoriteAnime: String,
-    favoriteFood: String,
+    cityAndState: String,
+    age: Number,
+    socialMedia: String,
+    imageURL: {data: Buffer, contentType: String}
 })
 
 const UserCollection = mongoose.model('User', UserSchema)
