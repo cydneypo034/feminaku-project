@@ -8,9 +8,10 @@ const User = props => (
         <td>{props.user.cityAndState}</td>
         <td>{props.user.age}</td>
         <td>{props.user.socialMedia}</td>
-        <td>
-            <Link to={"/edit/"+props.user._id}>Edit</Link>
-        </td>
+
+        <td><Link to={"/edit/"+props.user._id}>Edit</Link></td>
+            <td><Link to={"/"+props.user._id}>View User's Anime</Link></td>
+            
 
     </tr>
 )
