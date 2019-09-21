@@ -7,6 +7,7 @@ import createUser from './components/createUser.js';
 import editUser from './components/editUser.js';
 import user from './components/user.js';
 import UsersAnime from './components/userAnime.js';
+import CreateAnime from './components/createAnime.js';
 
 import './App.css';
 
@@ -25,6 +26,9 @@ class App extends React.Component {
               <li className="navbar-item">
                 <Link to="/create" className="nav-link">Create User</Link>
               </li>
+              <li className="navbar-item">
+                <Link to="/allanime" className="nav-link">All Anime</Link>
+              </li>
             </ul>
           </div>
         </nav>
@@ -33,7 +37,8 @@ class App extends React.Component {
         <Route path="/allusers" component={theseUsers} />
         <Route path="/create" component={createUser} />
         <Route path="/edit/:id" component={editUser} />
-        <Route path="/anime/:id" component={UsersAnime} />
+        <Route path="/allanime" component={UsersAnime} />
+        <Route path="/createAnime" component={CreateAnime} />
         </div>
         
         </Router>

@@ -1,15 +1,17 @@
 import React from 'react';
 import Axios from 'axios';
+import { Link } from 'react-router-dom';
 
 
 const Anime = props => (
     <tr>
         <td>{props.anime.name}</td>
         <td>{props.anime.favoriteSeason}</td>
-        <td>{props.anime.numberOfSeasons}</td>
         <td>{props.anime.favoriteCharacter}</td>
-        <td>{props.anime.animeGenre}</td>
         <td>{props.anime.characterCosplay}</td>
+
+        <td><Link to={"/createAnime"}>Create Anime</Link></td>            
+
     </tr>
 )
 
