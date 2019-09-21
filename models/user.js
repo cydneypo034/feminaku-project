@@ -5,7 +5,6 @@ var UserSchema = new mongoose.Schema({
     cityAndState: String,
     age: Number,
     socialMedia: String,
-    imageURL: {data: Buffer, contentType: String}
 })
 
 const UserCollection = mongoose.model('User', UserSchema)

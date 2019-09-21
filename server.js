@@ -25,7 +25,6 @@ const { clothesRouter } = require('./controllers/clothes.js')
  *
  * Register middleware...
  */
-
 /* Step 3.a
  * ...to parse the body of the HTTP requests from a URL encoded string 
  */

@@ -1,16 +1,15 @@
-import React from 'react';
+import React from 'react';
 import Axios from 'axios';
 
-class CreateUsers extends React.Component {
+class CreateUsers extends React.Component {
 
     constructor(props) {
         super(props);
-        
+
         this.onChangeName = this.onChangeName.bind(this)
         this.onChangeCityAndState = this.onChangeCityAndState.bind(this)
         this.onChangeAge = this.onChangeAge.bind(this)
         this.onChangeSocialMedia = this.onChangeSocialMedia.bind(this)
-        this.onChangeImageURL = this.onChangeImageURL.bind(this)
 
         this.state = {
             name: ' ',
@@ -40,15 +39,9 @@ class CreateUsers extends React.Component {
         })
     }
 
-    onChangeImageURL(e) {
-        this.setState({
-            imageURL: e.target.value
-        })
-    }
-
     handleSubmitInput = (event) => {
         event.preventDefault();
-        
+
         console.log(`Form submitted:`)
 
         //for using axios to grab the data from the api
@@ -57,56 +50,53 @@ class CreateUsers extends React.Component {
             cityAndState: this.state.cityAndState,
             age: this.state.age,
             socialMedia: this.state.socialMedia,
-            imageURL: this.state.imageURL
         };
         //for using axios to grab the data from the api
         Axios.post('http://localhost:3000/api/user', myNewUser)
-        .then(res => console.log(res.data))
+            .then(res => console.log(res.data))
 
         this.setState({
             name: '',
             cityAndState: '',
             age: 0,
-            socialMedia: '',
-            imageURL: ''
+            socialMedia: ''
         })
     }
 
-    render () {
-        return (
-            <div>
-            
+    render() {
+        return (
+            <div>
+
                 <h1 className="fem-welcome">Come Join the Family! Enter Your Info Below!</h1>
                 <form onSubmit={this.handleSubmitInput}>
                     <label>Name</label>
                     <input type="text"
-                    className="form-control"
-                    value={this.state.name}
-                    onChange={this.onChangeName}
-                   />
-                   <label>City and State</label>
-                   <input type="text"
-                    className="form-control"
-                    value={this.state.cityAndState}
-                    onChange={this.onChangeCityAndState}
-                   />
-                   <label>Age</label>
-                   <input type="number"
-                    className="form-control"
-                    value={this.state.age}
-                    onChange={this.onChangeAge}
-                   />
-                   <label>Social Media</label>
-                   <input type="text"
-                    className="form-control"
-                    value={this.state.socialMedia}
-                    onChange={this.onChangeSocialMedia}
-                   />
-                   <label>User's Image</label>
-                   <input type="submit" value="Add User" />
+                        className="form-control"
+                        value={this.state.name}
+                        onChange={this.onChangeName}
+                    />
+                    <label>City and State</label>
+                    <input type="text"
+                        className="form-control"
+                        value={this.state.cityAndState}
+                        onChange={this.onChangeCityAndState}
+                    />
+                    <label>Age</label>
+                    <input type="number"
+                        className="form-control"
+                        value={this.state.age}
+                        onChange={this.onChangeAge}
+                    />
+                    <label>Social Media</label>
+                    <input type="text"
+                        className="form-control"
+                        value={this.state.socialMedia}
+                        onChange={this.onChangeSocialMedia}
+                    />
+                    <input type="submit" value="Add User" />
                 </form>
-                </div>
-        )
-    }
+            </div>
+        )
+    }
 }
-export default CreateUsers;
+export default CreateUsers;
