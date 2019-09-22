@@ -1,5 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
+import {Button} from 'react-bootstrap';
 
 class CreateClothes extends React.Component {
 
@@ -8,18 +9,14 @@ class CreateClothes extends React.Component {
 
         this.onChangeStoreName = this.onChangeStoreName.bind(this)
         this.onChangeFavoriteCharacter = this.onChangeFavoriteCharacter.bind(this)
-        this.onChangeShirtsDressesOrPants = this.onChangeShirtsDressesOrPants.bind(this)
         this.onChangeFavoriteAccesory = this.onChangeFavoriteAccessory.bind(this)
         this.onChangeFashionSite = this.onChangeFashionSite.bind(this)
-        this.onChangeShoeSize = this.onChangeShoeSize.bind(this)
 
         this.state = {
             storeName: ' ',
             favoriteCharacter: ' ',
-            shirtsDressesOrPants: ' ',
             favoriteAccessory: ' ',
-            fashionSite: '',
-            shoeSize: 0
+            fashionSite: ''
         }
     }
     onChangeStoreName(e) {
@@ -32,11 +29,6 @@ class CreateClothes extends React.Component {
             favoriteCharacter: e.target.value
         })
     }
-    onChangeShirtsDressesOrPants(e) {
-        this.setState({
-            shirtsDressesOrPants: e.target.value
-        })
-    }
     onChangeFavoriteAccessory(e) {
         this.setState({
             favoriteAccessory: e.target.value
@@ -45,11 +37,6 @@ class CreateClothes extends React.Component {
     onChangeFashionSite(e) {
         this.setState({
             fashionSite: e.target.value
-        })
-    }
-    onChangeShoeSize(e) {
-        this.setState({
-            shoeSize: e.target.value
         })
     }
 
@@ -62,10 +49,8 @@ class CreateClothes extends React.Component {
         const myNewClothes = {
             storeName: this.state.storeName,
             favoriteCharacter: this.state.favoriteCharacter,
-            shirtsDressesOrPants: this.state.shirtsDressesOrPants,
             favoriteAccessory: this.state.favoriteAccessory,
             fashionSite: this.state.fashionSite,
-            shoeSize: this.state.shoeSize
         };
         //for using axios to grab the data from the api
         Axios.post('http://localhost:3000/api/clothes', myNewClothes)
@@ -74,10 +59,8 @@ class CreateClothes extends React.Component {
         this.setState({
             storeName: ' ',
             favoriteCharacter: ' ',
-            shirtsDressesOrPants: ' ',
             favoriteAccessory: ' ',
-            fashionSite: '',
-            shoeSize: 0
+            fashionSite: ''
         })
     }
 
@@ -99,12 +82,6 @@ class CreateClothes extends React.Component {
                         value={this.state.favoriteCharacter}
                         onChange={this.onChangeFavoriteCharacter}
                     />
-                    <label>Shirts, Dresses or Pants?</label>
-                    <input type="text"
-                        className="form-control"
-                        value={this.state.shirtsDressesOrPants}
-                        onChange={this.onChangeShirtsDressesOrPants}
-                    />
                     <label>Favorite Accessory</label>
                     <input type="text"
                         className="form-control"
@@ -117,13 +94,7 @@ class CreateClothes extends React.Component {
                         value={this.state.fashionSite}
                         onChange={this.onChangeFashionSite}
                     />
-                    <label>Shoe Size</label>
-                    <input type="number"
-                        className="form-control"
-                        value={this.state.shoeSize}
-                        onChange={this.onChangeShoeSize}
-                    />
-                    <input type="submit" value="Add Clothes" />
+                    <Button variant="info" type="submit" value="Add Clothes">Add Clothes</Button>
                 </form>
             </div>
         )

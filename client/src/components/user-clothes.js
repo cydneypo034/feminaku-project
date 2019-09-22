@@ -1,21 +1,9 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Button} from 'react-bootstrap';
 import Axios from 'axios';
 import {Table} from 'react-bootstrap';
 
-const Clothes = props => (
-    <tr>
-        <td>{props.clothes.storeName}</td>
-        <td>{props.clothes.favoriteCharacter}</td>
-        <td>{props.clothes.shirtsDressesOrPants}</td>
-        <td>{props.clothes.favoriteAccessory}</td>
-        <td>{props.clothes.fashionSite}</td>
-        <td>{props.clothes.shoeSize}</td>
 
-        <td><Link to={"/editclothes/"+props.clothes._id}>Edit Clothes</Link></td>
-
-    </tr>
-)
 class theseClothes extends React.Component {
 
     constructor(props) {
@@ -37,10 +25,52 @@ class theseClothes extends React.Component {
 
 
     clothesList() {
-
+        const Clothes = props => (
+            <tr>
+                <td>{props.clothes.storeName}</td>
+                <td>{props.clothes.favoriteCharacter}</td>
+                <td>{props.clothes.favoriteAccessory}</td>
+                <td>{props.clothes.fashionSite}</td>
+        
+                <td>
+                <Button variant="primary" onClick={() => this.edit(props.clothes._id)}>Edit User</Button>
+                <span></span>
+                <Button variant="danger" onClick={() => this.delete(props.clothes._id)}>Delete User</Button>
+                </td>
+        
+            </tr>
+        )
         return this.state.clothes.map(function(currentClothes, i){
             return <Clothes clothes={currentClothes} key={i} />;
         })
+    }
+    edit(id) {
+        this.props.history.push('/editclothes/' + id)
+    }
+
+    delete(id) {
+        Axios.delete('http://localhost:3000/api/clothes/'+id)
+        .then(response => {
+            let clothess = this.state.clothess;
+            let index = -1
+            let counter = 0;
+            for (let clothes of clothess){
+                if(clothes._id === id){
+                    index = counter;
+                    break
+                }
+                counter++;
+            }
+            if(index !== -1){
+                clothess.splice(index, 1);
+                this.setState({
+                    clothess: clothess
+                });
+            }
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
     }
 
    
@@ -53,10 +83,8 @@ class theseClothes extends React.Component {
                             <tr>
                                 <td>Store Name</td>
                                 <td>Favorite Character</td>
-                                <td>Shirts, Dresses, Pants or All?</td>
                                 <td>Favorite Accessory</td>
-                                <td>Fashion WebSite</td>
-                                <td>Shoe Size</td>
+                                <td>Fashion Website</td>
                             </tr> 
                             {this.clothesList()}
                             

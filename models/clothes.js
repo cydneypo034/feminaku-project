@@ -3,10 +3,8 @@ const mongoose = require('./connection.js')
 var ClothesSchema = new mongoose.Schema({
     storeName: String,
     favoriteCharacter: String,
-    shirtsDressesOrPants: String,
     favoriteAccessory: String,
-    fashionSite: String,
-    shoeSize: Number,
+    fashionSite: String
 })
 
 const ClothesCollection = mongoose.model('Clothes', ClothesSchema)

@@ -1,5 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
+import {Button} from 'react-bootstrap';
 
 class EditClothes extends React.Component {
 
@@ -8,30 +9,24 @@ class EditClothes extends React.Component {
 
         this.onChangeStoreName = this.onChangeStoreName.bind(this)
         this.onChangeFavoriteCharacter = this.onChangeFavoriteCharacter.bind(this)
-        this.onChangeShirtsDressesOrPants = this.onChangeShirtsDressesOrPants.bind(this)
         this.onChangeFavoriteAccesory = this.onChangeFavoriteAccessory.bind(this)
         this.onChangeFashionSite = this.onChangeFashionSite.bind(this)
-        this.onChangeShoeSize = this.onChangeShoeSize.bind(this)
 
         this.state = {
             storeName: ' ',
             favoriteCharacter: ' ',
-            shirtsDressesOrPants: ' ',
             favoriteAccessory: ' ',
             fashionSite: '',
-            shoeSize: 0
         }
     }
     componentDidMount() {
         Axios.get('http://localhost:3000/api/clothes/' + this.props.match.params.id)
         .then(res => {
             this.setState({
-                storeName: res.data.name,
+                storeName: res.data.storeName,
                 favoriteCharacter: res.data.favoriteCharacter,
-                shirtsDressesOrPants: res.data.shirtsDressesOrPants,
                 favoriteAccessory: res.data.favoriteAccessory,
                 fashionSite: res.data.fashionSite,
-                shoeSize: res.data.shoeSize
             })
         })
     }
@@ -45,11 +40,7 @@ class EditClothes extends React.Component {
             favoriteCharacter: e.target.value
         })
     }
-    onChangeShirtsDressesOrPants(e) {
-        this.setState({
-            shirtsDressesOrPants: e.target.value
-        })
-    }
+
     onChangeFavoriteAccessory(e) {
         this.setState({
             favoriteAccessory: e.target.value
@@ -60,11 +51,7 @@ class EditClothes extends React.Component {
             fashionSite: e.target.value
         })
     }
-    onChangeShoeSize(e) {
-        this.setState({
-            shoeSize: e.target.value
-        })
-    }
+
 
     handleSubmitInput = (event) => {
         event.preventDefault();
@@ -75,10 +62,8 @@ class EditClothes extends React.Component {
         const editClothes = {
             storeName: this.state.storeName,
             favoriteCharacter: this.state.favoriteCharacter,
-            shirtsDressesOrPants: this.state.shirtsDressesOrPants,
             favoriteAccessory: this.state.favoriteAccessory,
             fashionSite: this.state.fashionSite,
-            shoeSize: this.state.shoeSize
         };
         //for using axios to grab the data from the api
         Axios.put('http://localhost:3000/api/clothes/' + this.props.match.params.id, editClothes)
@@ -105,12 +90,7 @@ class EditClothes extends React.Component {
                         value={this.state.favoriteCharacter}
                         onChange={this.onChangeFavoriteCharacter}
                     />
-                    <label>Shirts, Dresses or Pants?</label>
-                    <input type="text"
-                        className="form-control"
-                        value={this.state.shirtsDressesOrPants}
-                        onChange={this.onChangeShirtsDressesOrPants}
-                    />
+
                     <label>Favorite Accessory</label>
                     <input type="text"
                         className="form-control"
@@ -123,13 +103,8 @@ class EditClothes extends React.Component {
                         value={this.state.fashionSite}
                         onChange={this.onChangeFashionSite}
                     />
-                    <label>Shoe Size</label>
-                    <input type="number"
-                        className="form-control"
-                        value={this.state.shoeSize}
-                        onChange={this.onChangeShoeSize}
-                    />
-                    <input type="submit" value="Edit Clothes" />
+
+                    <Button variant="info" type="submit" value="Edit Clothes">Edit Clothes</Button>
                 </form>
             </div>
         )
