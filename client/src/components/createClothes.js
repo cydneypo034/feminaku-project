@@ -1,6 +1,8 @@
 import React from 'react';
 import Axios from 'axios';
 import {Button} from 'react-bootstrap';
+import CoupleTree from './images2/maxresdefault.jpg';
+
 
 class CreateClothes extends React.Component {
 
@@ -66,8 +68,8 @@ class CreateClothes extends React.Component {
 
     render() {
         return (
-            <div className="container">
-               
+            <div>
+              <img className="about-background-image" src={CoupleTree} alt="town" width="100%" height="100%"/>
                 <h1 className="title-table2">★ Any Favorite Merch Stores? Enter Them! ★</h1>
                 <form className="this-form" onSubmit={this.handleSubmitInput}>
                     <label>Store Name</label>
