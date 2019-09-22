@@ -2,6 +2,7 @@ import React from 'react';
 import {Button} from 'react-bootstrap';
 import Axios from 'axios';
 import {Table} from 'react-bootstrap';
+import Blossoms from './images2/blossoms.jpg'
 
 
 class theseUsers extends React.Component {
@@ -77,9 +78,12 @@ class theseUsers extends React.Component {
    
         render () {
             return (
-                <div className="container">
-                    <h1 className="fem-welcome">Have a Look at our Wonderful Community!</h1>
-                    <Table striped bordered size="sm">
+
+                <div>        
+                <img className="about-background-image" src={Blossoms} alt="town" width="100%" height="100%"/>
+                    <h1 className="title-table">Have a Look at our <br></br>Wonderful Community!</h1>
+                    <div className="list-table-navtabs">
+                    <Table striped bordered hover variant="light">
                         <tbody>
                             <tr className="color-names-table">
                                 <td>Name</td>
@@ -87,11 +91,13 @@ class theseUsers extends React.Component {
                                 <td>Age</td>
                                 <td>Social Media</td>
                             </tr> 
+
                             {this.userList()}
                             
                         </tbody>
                     </Table>
-                </div>
+                    </div>
+                </div>
             )
         }
     }

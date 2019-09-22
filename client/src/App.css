@@ -83,5 +83,29 @@
 }
 
 .color-names-table {
-  color: pink;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+}
+
+.list-table-navtabs {
+  position: absolute;
+  top: 40%;
+  left: 67%;
+  transform: translate(-50%, -10%)
+}
+
+.title-table {
+  font-family: 'Cute Font', cursive;
+  font-size: 60px;
+  text-align: center;
+  padding: 5%;
+  position: absolute;
+  top: 30%;
+  background-color: lightblue;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px #000000;
+  border: dotted;
+  border-width: 5px;
 }
