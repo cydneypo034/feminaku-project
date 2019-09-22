@@ -13,7 +13,7 @@ class Home extends React.Component {
                     <img
                     className="sailormoon"
                     width="1320"
-                    height="390"
+                    height="100%"
                     src={SailorMoon}
                     alt="Bulma"
                     />
@@ -22,7 +22,7 @@ class Home extends React.Component {
                     <img
                     className="Dawn"
                     width="1320"
-                    height="390"
+                    height="100%"
 
                     src={Dawn}
                     alt="Dawn"
@@ -32,7 +32,7 @@ class Home extends React.Component {
                     <img
                     className="Shiinoa"
                     width="1320"
-                    height="390"
+                    height="100%"
 
                     src={Shiinoa}
                     alt="Shiinoa"
@@ -42,7 +42,7 @@ class Home extends React.Component {
                     <img
                     className="Yumeko"
                     width="1320"
-                    height="390"
+                    height="100%"
 
                     src={Yumkeo}
                     alt="Yumeko"

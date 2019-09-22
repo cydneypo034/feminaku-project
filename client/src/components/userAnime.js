@@ -2,6 +2,7 @@ import React from 'react';
 import Axios from 'axios';
 import { Button } from 'react-bootstrap';
 import { Table } from 'react-bootstrap';
+import Blossoms from './images2/blossoms.jpg'
 
 
 
@@ -74,9 +75,12 @@ class UsersAnime extends React.Component {
     }
         render () {
             return (
-                <div className="container">
-                    <h1 className="fem-welcome">Do You have a Favorite Anime? List it Here!</h1>
-                    <Table striped bordered hover size="sm">  
+        
+                <div>
+                    <img className="about-background-image" src={Blossoms} alt="town" width="100%" height="100%"/>
+                    <h1 className="title-table">Do You have a Favorite <br></br> Anime? List it Here!</h1>
+                    <div className="list-table-navtabs">
+                    <Table striped bordered hover variant="light">  
                         <tbody>
                             <tr className="color-names-table">
                                 <td>Name</td>
@@ -87,6 +91,7 @@ class UsersAnime extends React.Component {
                             { this.animeList()}
                         </tbody>
                     </Table>
+                    </div>
                 </div>
             )
         }

@@ -1,18 +1,27 @@
 import React from 'react';
-import Geometric from './images2/HW97Y94.jpg'
+import {Link} from 'react-router-dom';
 
 class Footer extends React.Component {
         render () {
             return (
-                <div>
-                <img className="about-background-image" src={Geometric} alt="town" width="100%" height="410"/>
-                <h1 className="footer-centered">Contact Us </h1>
-                <p className="footer-paragraph">We'll be adding categories soon! If you want to keep up with what we're doing, follow Us on Instagram at @feminakuoffical and find us 
-                on Facebook at Feminaku Official!</p>
+                <div>
+                <nav className="navbar navbar-expand-lg navbar-light">
+                <div className="navbar-collapse">
+                    <ul className="navbar-nav mr-auto">
+                    <li className="navbar-item">
+                        <Link to="#" className="nav-link">Facebook</Link>
+                    </li>
+                    <li className="navbar-item">
+                        <Link to="#" className="nav-link">Instagram</Link>
+                    </li>
+                    <li className="navbar-item">
+                        <Link to="#" className="nav-link">Email</Link>
+                    </li>
+                    </ul>
                 </div>
+                </nav>
+            </div>
             )
         }
     }
-    
-    
-    export default Footer;
+export default Footer;
