@@ -4,7 +4,7 @@ class Footer extends React.Component {
         render () {
             return (
                 <div>
-                    What's Good!
+                    <p>What's Good!</p>
                 </div>
             )
         }

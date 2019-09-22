@@ -42,7 +42,7 @@ class UsersAnime extends React.Component {
     }
         render () {
             return (
-                <div>
+                <div className="container">
                     <h1 className="fem-welcome">Do You have a Favorite Anime? List it Here!</h1>
                     <Table striped bordered hover>
                         

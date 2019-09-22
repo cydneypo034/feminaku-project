@@ -67,7 +67,7 @@ class CreateAnime extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="container">
 
                 <h1 className="fem-welcome">Got a Favorite Anime? Create it Here!</h1>
                 <form onSubmit={this.handleSubmitInput}>

@@ -1,4 +1,3 @@
-
 .navbar-title {
   font-family: 'Cute Font', cursive;
   font-size: 40px;
@@ -10,11 +9,10 @@
 }
 
 .navbar {
-  background: pink;
+  background-image: linear-gradient(to bottom right, deeppink, purple);
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
 }
-
 .carousel-div {
   position: absolute;
   top: 50;
