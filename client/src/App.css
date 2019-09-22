@@ -23,7 +23,7 @@
 
 .about-centered{
   position: absolute;
-  top: 40%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'Cute Font', cursive;
@@ -34,7 +34,7 @@
 
 .about-paragraph {
   position: absolute;
-  top: 60%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'Montserrat', sans-serif;

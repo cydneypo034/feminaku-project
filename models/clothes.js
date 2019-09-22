@@ -1,12 +1,12 @@
 const mongoose = require('./connection.js')
 
 var ClothesSchema = new mongoose.Schema({
-    storeName: {type: String, trim: true, default: ''},
-    favoriteCharacter: {type: String, trim: true, default: ''},
-    shirtSize: {type: String, trim: true, default: ''},
-    pantSize: {type: String, trim: true, default: ''},
-    favoriteAccessory: {type: String, trim: true, default: ''},
-    shoeSize: {type: Number, trim: true, default: ''},
+    storeName: String,
+    favoriteCharacter: String,
+    shirtsDressesOrPants: String,
+    favoriteAccessory: String,
+    fashionSite: String,
+    shoeSize: Number,
 })
 
 const ClothesCollection = mongoose.model('Clothes', ClothesSchema)

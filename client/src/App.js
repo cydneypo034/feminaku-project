@@ -9,6 +9,9 @@ import user from './components/user.js';
 import UsersAnime from './components/userAnime.js';
 import CreateAnime from './components/createAnime.js';
 import EditAnime from './components/editAnime.js';
+import CreateClothes from './components/createClothes.js';
+import UsersClothes from './components/user-clothes.js';
+import EditClothes from './components/editClothes.js';
 
 class App extends React.Component {
   render() {
@@ -30,6 +33,13 @@ class App extends React.Component {
                   <li className="navbar-item">
                     <Link to="/createAnime" className="nav-link">Enter An Anime</Link>
                   </li>
+                  <li className="navbar-item">
+                    <Link to="/allclothes" className="nav-link">All Merch</Link>
+                  </li>
+                  <li className="navbar-item">
+                    <Link to="/createClothes" className="nav-link">Enter Clothes</Link>
+                  </li>
+                  
                 </ul>
               </div>
             </nav>
@@ -40,6 +50,9 @@ class App extends React.Component {
               <Route path="/allanime" component={UsersAnime} />
               <Route path="/createAnime" component={CreateAnime} />
               <Route path="/editanime/:id" component={EditAnime} />
+              <Route path="/allclothes" component={UsersClothes} />
+              <Route path="/createClothes" component={CreateClothes} />
+              <Route path="/editclothes/:id" component={EditClothes} />
     </Router>
 )     
   }
