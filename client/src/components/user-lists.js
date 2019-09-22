@@ -79,9 +79,9 @@ class theseUsers extends React.Component {
             return (
                 <div className="container">
                     <h1 className="fem-welcome">Have a Look at our Wonderful Community!</h1>
-                    <Table striped bordered hover>
+                    <Table striped bordered size="sm">
                         <tbody>
-                            <tr>
+                            <tr className="color-names-table">
                                 <td>Name</td>
                                 <td>City and State</td>
                                 <td>Age</td>

@@ -76,10 +76,9 @@ class UsersAnime extends React.Component {
             return (
                 <div className="container">
                     <h1 className="fem-welcome">Do You have a Favorite Anime? List it Here!</h1>
-                    <Table striped bordered hover>
-                        
+                    <Table striped bordered hover size="sm">  
                         <tbody>
-                            <tr>
+                            <tr className="color-names-table">
                                 <td>Name</td>
                                 <td>Favorite Season</td>
                                 <td>Favorite Character</td>

@@ -1,3 +1,4 @@
+
 .navbar-title {
   font-family: 'Cute Font', cursive;
   font-size: 40px;
@@ -23,7 +24,7 @@
 
 .about-centered{
   position: absolute;
-  top: 30%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'Cute Font', cursive;
@@ -34,7 +35,7 @@
 
 .about-paragraph {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'Montserrat', sans-serif;
@@ -43,10 +44,44 @@
   text-align: center;
   color: white;
   text-shadow: 1px 1px #000000;
+  border: dotted;
+  border-width: 5px;
+}
+
+.footer-centered{
+  position: absolute;
+  top: 140%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Cute Font', cursive;
+  font-size: 100px;
+  color: white;
+  text-shadow: 1px 1px #000000;
+}
+
+.footer-paragraph{
+  position: absolute;
+  top: 160%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 25px;
+  background-color: lightblue;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px #000000;
+  border: dotted;
+  border-width: 5px;
 }
 
 .fem-welcome {
   font-family: 'Cute Font', cursive;
   font-size: 60px;
   text-align: center;
+  padding: 5%;
+  
+}
+
+.color-names-table {
+  color: pink;
 }

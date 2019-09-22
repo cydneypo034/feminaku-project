@@ -77,6 +77,7 @@ class EditClothes extends React.Component {
             <div className="container">
 
                 <h1 className="fem-welcome">Need to Fix Anything? Edit It Here!</h1>
+                <div className="form-wrap">
                 <form onSubmit={this.handleSubmitInput}>
                     <label>Store Name</label>
                     <input type="text"
@@ -106,6 +107,7 @@ class EditClothes extends React.Component {
 
                     <Button variant="info" type="submit" value="Edit Clothes">Edit Clothes</Button>
                 </form>
+                </div>
             </div>
         )
     }

@@ -67,8 +67,9 @@ class CreateClothes extends React.Component {
     render() {
         return (
             <div className="container">
-
+               
                 <h1 className="fem-welcome">Where do you buy merch from? Enter Your Info Below!</h1>
+                 <div className="form-wrap">
                 <form onSubmit={this.handleSubmitInput}>
                     <label>Store Name</label>
                     <input type="text"
@@ -96,6 +97,7 @@ class CreateClothes extends React.Component {
                     />
                     <Button variant="info" type="submit" value="Add Clothes">Add Clothes</Button>
                 </form>
+                </div>
             </div>
         )
     }

@@ -78,9 +78,9 @@ class theseClothes extends React.Component {
             return (
                 <div className="container">
                     <h1 className="fem-welcome">All of our Favorite Merchandise Places!</h1>
-                    <Table striped bordered hover>
+                    <Table striped bordered hover size="sm">
                         <tbody>
-                            <tr>
+                            <tr className="color-names-table">
                                 <td>Store Name</td>
                                 <td>Favorite Character</td>
                                 <td>Favorite Accessory</td>
