@@ -1,5 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
+import {Button} from 'react-bootstrap';
 
 class CreateAnime extends React.Component {
 
@@ -95,7 +96,7 @@ class CreateAnime extends React.Component {
                         value={this.state.characterCosplay}
                         onChange={this.onChangeCharacterCosplay}
                     />
-                    <input type="submit" value="Add Anime" />
+                <Button variant="info" type="submit" value="Add Anime">Add Anime</Button>                
                 </form>
             </div>
         )

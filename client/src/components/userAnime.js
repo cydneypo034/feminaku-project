@@ -1,19 +1,9 @@
 import React from 'react';
 import Axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 import { Table } from 'react-bootstrap';
 
-const Anime = props => (
-    <tr>
-        <td>{props.anime.name}</td>
-        <td>{props.anime.favoriteSeason}</td>
-        <td>{props.anime.favoriteCharacter}</td>
-        <td>{props.anime.characterCosplay}</td>
 
-        <td><Link to={"/editAnime/"+props.anime._id}>Edit This Anime</Link></td>
-
-    </tr>
-)
 
 class UsersAnime extends React.Component {
 
@@ -36,9 +26,51 @@ class UsersAnime extends React.Component {
 
 
     animeList() {
+        const Anime = props => (
+            <tr>
+                <td>{props.anime.name}</td>
+                <td>{props.anime.favoriteSeason}</td>
+                <td>{props.anime.favoriteCharacter}</td>
+                <td>{props.anime.characterCosplay}</td>
+
+                <td>
+                <Button variant="primary" onClick={() => this.edit(props.anime._id)}>Edit Anime</Button>
+                <span></span>
+                <Button variant="danger" onClick={() => this.delete(props.anime._id)}>Delete Anime</Button>
+                </td>
+            </tr>
+)
         return this.state.anime.map(function(animeDisplayed){
             return <Anime anime={animeDisplayed} />;
+        });
+    }
+    edit(id) {
+        this.props.history.push('/editanime/' + id)
+    }
+
+    delete(id) {
+        Axios.delete('http://localhost:3000/api/anime/'+id)
+        .then(response => {
+            let animes = this.state.animes;
+            let index = -1
+            let counter = 0;
+            for (let anime of animes){
+                if(anime._id === id){
+                    index = counter;
+                    break
+                }
+                counter++;
+            }
+            if(index !== -1){
+                animes.splice(index, 1);
+                this.setState({
+                    animes: animes
+                });
+            }
         })
+        .catch(function (error) {
+            console.log(error);
+        });
     }
         render () {
             return (
