@@ -52,7 +52,7 @@ class CreateUsers extends React.Component {
             socialMedia: this.state.socialMedia,
         };
         //for using axios to grab the data from the api
-        Axios.post('http://localhost:3000/api/user', myNewUser)
+        Axios.post('http://localhost:3000/api/users', myNewUser)
             .then(res => console.log(res.data))
 
         this.setState({
@@ -93,7 +93,7 @@ class CreateUsers extends React.Component {
                         value={this.state.socialMedia}
                         onChange={this.onChangeSocialMedia}
                     />
-                    <input type="submit" value="Add User" />
+                <Button variant="info" type="submit" value="Add User">Add Yourself!</Button>                
                 </form>
             </div>
         )

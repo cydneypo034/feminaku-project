@@ -1,19 +1,9 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Button} from 'react-bootstrap';
 import Axios from 'axios';
 import {Table} from 'react-bootstrap';
 
-const User = props => (
-    <tr>
-        <td>{props.user.name}</td>
-        <td>{props.user.cityAndState}</td>
-        <td>{props.user.age}</td>
-        <td>{props.user.socialMedia}</td>
 
-        <td><Link to={"/edit/"+props.user._id}>Edit User</Link></td>
-
-    </tr>
-)
 class theseUsers extends React.Component {
 
     constructor(props) {
@@ -24,7 +14,7 @@ class theseUsers extends React.Component {
     }
 
     componentDidMount() {
-        Axios.get('http://localhost:3000/api/user')
+        Axios.get('http://localhost:3000/api/users')
         .then(response => {
             this.setState({ users: response.data})
         })
@@ -35,10 +25,53 @@ class theseUsers extends React.Component {
 
 
     userList() {
+       const User = props => (
+        <tr>
+            <td>{props.user.name}</td>
+            <td>{props.user.cityAndState}</td>
+            <td>{props.user.age}</td>
+            <td>{props.user.socialMedia}</td>
 
+            <td>
+                <Button variant="primary" onClick={() => this.edit(props.user._id)}>Edit User</Button>
+                <span></span>
+                <Button variant="danger" onClick={() => this.delete(props.user._id)}>Delete User</Button>
+                </td>
+
+        </tr>
+) 
         return this.state.users.map(function(currentUser, i){
             return <User user={currentUser} key={i} />;
+        });
+    }
+
+    edit(id) {
+        this.props.history.push('/edit/' + id)
+    }
+
+    delete(id) {
+        Axios.delete('http://localhost:3000/api/users/'+id)
+        .then(response => {
+            let userss = this.state.userss;
+            let index = -1
+            let counter = 0;
+            for (let user of userss){
+                if(user._id === id){
+                    index = counter;
+                    break
+                }
+                counter++;
+            }
+            if(index !== -1){
+                userss.splice(index, 1);
+                this.setState({
+                    userss: userss
+                });
+            }
         })
+        .catch(function (error) {
+            console.log(error);
+        });
     }
 
    
@@ -65,3 +98,7 @@ class theseUsers extends React.Component {
     
     
     export default theseUsers;
+
+    /*
+    <td><Link to={"/edit/"+props.user._id}>Edit User</Link></td>
+    */

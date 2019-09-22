@@ -20,7 +20,7 @@ class editUser extends React.Component {
     }
 
     componentDidMount() {
-        Axios.get('http://localhost:3000/api/user/' + this.props.match.params.id)
+        Axios.get('http://localhost:3000/api/users/' + this.props.match.params.id)
         .then(res => {
             this.setState({
                 name: res.data.name,
@@ -65,7 +65,7 @@ class editUser extends React.Component {
             socialMedia: this.state.socialMedia,
         };
         //for using axios to grab the data from the api
-        Axios.put('http://localhost:3000/api/user/' + this.props.match.params.id, editedUser)
+        Axios.put('http://localhost:3000/api/users/' + this.props.match.params.id, editedUser)
             .then(res => console.log(res.data))
 
         this.props.history.push('/allusers');
@@ -75,7 +75,7 @@ class editUser extends React.Component {
     
     render() {
         return (
-            <div>
+            <div className="container">
                 <h1 className="fem-welcome">Need To Fix Anything? Edit It Here!</h1>
                 <form onSubmit={this.handleSubmitInput}>
                     <label>Name</label>
