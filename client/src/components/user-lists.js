@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import Axios from 'axios';
+import {Table} from 'react-bootstrap';
 
 const User = props => (
     <tr>
@@ -9,7 +10,7 @@ const User = props => (
         <td>{props.user.age}</td>
         <td>{props.user.socialMedia}</td>
 
-        <td><Link to={"/edit/"+props.user._id}>Edit</Link></td>            
+        <td><Link to={"/edit/"+props.user._id}>Edit User</Link></td>
 
     </tr>
 )
@@ -34,23 +35,29 @@ class theseUsers extends React.Component {
 
 
     userList() {
-        return this.state.users.map(function(currentUser){
-            return <User user={currentUser} />;
+
+        return this.state.users.map(function(currentUser, i){
+            return <User user={currentUser} key={i} />;
         })
     }
+
+   
         render () {
             return (
                 <div>
                     <h1 className="fem-welcome">Have a Look at our Wonderful Community!</h1>
-                    <table className="table responsive">
-                        <thread>
-                            <tr>
-                            </tr>
-                        </thread>
+                    <Table striped bordered hover>
                         <tbody>
-                            { this.userList()}
+                            <tr>
+                                <td>Name</td>
+                                <td>City and State</td>
+                                <td>Age</td>
+                                <td>Social Media</td>
+                            </tr> 
+                            {this.userList()}
+                            
                         </tbody>
-                    </table>
+                    </Table>
                 </div>
             )
         }

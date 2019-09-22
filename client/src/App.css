@@ -1,10 +1,18 @@
+
 .navbar-title {
   font-family: 'Cute Font', cursive;
   font-size: 40px;
 }
 
+.navbar-brand {
+  font-family: 'Cute Font', cursive;
+  font-size: 45px;
+}
+
 .navbar {
   background: pink;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
 }
 
 .carousel-div {
@@ -17,11 +25,13 @@
 
 .about-centered{
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'Cute Font', cursive;
   font-size: 100px;
+  color: white;
+  text-shadow: 1px 1px #000000;
 }
 
 .about-paragraph {
@@ -30,8 +40,11 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
+  font-size: 25px;
   background-color: lightblue;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px #000000;
 }
 
 .fem-welcome {

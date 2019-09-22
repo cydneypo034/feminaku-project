@@ -1,7 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
-
+import { Table } from 'react-bootstrap';
 
 const Anime = props => (
     <tr>
@@ -10,7 +10,7 @@ const Anime = props => (
         <td>{props.anime.favoriteCharacter}</td>
         <td>{props.anime.characterCosplay}</td>
 
-        <td><Link to={"/createAnime"}>Create Anime</Link></td>            
+        <td><Link to={"/editAnime/"+props.anime._id}>Edit This Anime</Link></td>
 
     </tr>
 )
@@ -43,16 +43,19 @@ class UsersAnime extends React.Component {
         render () {
             return (
                 <div>
-                    <h1 className="fem-welcome">These shows are ranked a 10 out of 10!</h1>
-                    <table className="table responsive">
-                        <thread>
-                            <tr>
-                            </tr>
-                        </thread>
+                    <h1 className="fem-welcome">Do You have a Favorite Anime? List it Here!</h1>
+                    <Table striped bordered hover>
+                        
                         <tbody>
+                            <tr>
+                                <td>Name</td>
+                                <td>Favorite Season</td>
+                                <td>Favorite Character</td>
+                                <td>Would You Cosplay Them?</td>
+                            </tr> 
                             { this.animeList()}
                         </tbody>
-                    </table>
+                    </Table>
                 </div>
             )
         }

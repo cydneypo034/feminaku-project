@@ -8,6 +8,7 @@ import editUser from './components/editUser.js';
 import user from './components/user.js';
 import UsersAnime from './components/userAnime.js';
 import CreateAnime from './components/createAnime.js';
+import EditAnime from './components/editAnime.js';
 
 import './App.css';
 
@@ -15,8 +16,7 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <div className="container">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light">
           <Link to="/" className="navbar-brand">Feminaku</Link> 
           <div className="navbar-collapse">
             <ul className="navbar-nav mr-auto">
@@ -29,6 +29,9 @@ class App extends React.Component {
               <li className="navbar-item">
                 <Link to="/allanime" className="nav-link">All Anime</Link>
               </li>
+              <li className="navbar-item">
+                <Link to="/createAnime" className="nav-link">Enter An Anime</Link>
+              </li>
             </ul>
           </div>
         </nav>
@@ -39,7 +42,7 @@ class App extends React.Component {
         <Route path="/edit/:id" component={editUser} />
         <Route path="/allanime" component={UsersAnime} />
         <Route path="/createAnime" component={CreateAnime} />
-        </div>
+        <Route path="/editanime/:id" component={EditAnime} />
         
         </Router>
       )

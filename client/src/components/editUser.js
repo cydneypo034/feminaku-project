@@ -1,5 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
+import { Button } from 'react-bootstrap';
 
 class editUser extends React.Component {
     constructor(props) {
@@ -70,6 +71,8 @@ class editUser extends React.Component {
         this.props.history.push('/allusers');
     }
 
+
+    
     render() {
         return (
             <div>
@@ -99,7 +102,7 @@ class editUser extends React.Component {
                         value={this.state.socialMedia}
                         onChange={this.onChangeSocialMedia}
                     />
-                    <input type="submit" value="Edit User" />
+                    <Button variant="info" type="submit" value="Edit User">Edit User</Button>
                 </form>
             </div>
         )
