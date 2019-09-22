@@ -68,8 +68,8 @@ class CreateUsers extends React.Component {
         return (
             <div className="container">
                 
-                <h1 className="fem-welcome">Come Join the Family! Enter Your Info Below!</h1>
-                <form onSubmit={this.handleSubmitInput}>
+                <h1 className="title-table2">★ Come Join the Family! Enter Your Info! ★</h1>
+                <form className="this-form" onSubmit={this.handleSubmitInput}>
                     <label>Name</label>
                     <input type="text"
                         className="form-control"

@@ -70,8 +70,8 @@ class CreateAnime extends React.Component {
         return (
             <div className="container">
 
-                <h1 className="fem-welcome">Got a Favorite Anime? Create it Here!</h1>
-                <form onSubmit={this.handleSubmitInput}>
+                <h1 className="title-table2"> ★ Got a Favorite Anime? Enter It Below! ★</h1>
+                <form className="this-form" onSubmit={this.handleSubmitInput}>
                     <label>Name</label>
                     <input type="text"
                         className="form-control"

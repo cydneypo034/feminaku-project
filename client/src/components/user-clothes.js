@@ -2,7 +2,7 @@ import React from 'react';
 import {Button} from 'react-bootstrap';
 import Axios from 'axios';
 import {Table} from 'react-bootstrap';
-import Blossoms from './images2/blossoms.jpg';
+import Blossoms from './images2/cuteanimegirl.png'
 
 class theseClothes extends React.Component {
 
@@ -33,9 +33,9 @@ class theseClothes extends React.Component {
                 <td>{props.clothes.fashionSite}</td>
         
                 <td>
-                <Button variant="primary" onClick={() => this.edit(props.clothes._id)}>Edit User</Button>
+                <Button variant="primary" onClick={() => this.edit(props.clothes._id)}>Edit Info</Button>
                 <span></span>
-                <Button variant="danger" onClick={() => this.delete(props.clothes._id)}>Delete User</Button>
+                <Button variant="danger" onClick={() => this.delete(props.clothes._id)}>Delete Info</Button>
                 </td>
         
             </tr>
@@ -77,7 +77,7 @@ class theseClothes extends React.Component {
         render () {
             return (
                 <div>
-                 <img className="about-background-image" src={Blossoms} alt="town" width="100%" height="100%"/>
+                 <img className="about-background-image" src={Blossoms} alt="town" width="100%" height="1050px"/>
                     <h1 className="title-table">All of our Favorite <br></br> Merchandise Places!</h1>
                     <div className="list-table-navtabs">
                     <Table striped bordered hover variant="light">
