@@ -3,7 +3,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import SailorMoon from './images2/sailor-moonhearts.gif';
 import Dawn from './images2/dawn-pokemon.gif';
 import Hana from './images2/hanamutou.gif';
-import Yumkeo from './images2/yumekojabami.gif';
+import Howl from './images2/howlandsohpie.gif';
 
 class Home extends React.Component {
     render() {
@@ -40,11 +40,11 @@ class Home extends React.Component {
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
-                    className="Yumeko"
+                    className="Howl"
                     width="100%"
                     height="100%"
 
-                    src={Yumkeo}
+                    src={Howl}
                     alt="Yumeko"
                     />
                 </Carousel.Item>
