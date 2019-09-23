@@ -71,30 +71,31 @@ class CreateUsers extends React.Component {
             <img className="about-background-image" src={CoupleTree} alt="town" width="100%" height="100%"/>
                 <h1 className="title-table2">★ Come Join the Family! Enter Your Info! ★</h1>
                 <form className="this-form" onSubmit={this.handleSubmitInput}>
-                    <label>Name</label>
+                    <label className="text-class">Name</label>
                     <input type="text"
                         className="form-control"
                         value={this.state.name}
                         onChange={this.onChangeName}
                     />
-                    <label>City and State</label>
+                    <label className="text-class">City and State</label>
                     <input type="text"
                         className="form-control"
                         value={this.state.cityAndState}
                         onChange={this.onChangeCityAndState}
                     />
-                    <label>Age</label>
+                    <label className="text-class">Age</label>
                     <input type="number"
                         className="form-control"
                         value={this.state.age}
                         onChange={this.onChangeAge}
                     />
-                    <label>Social Media</label>
+                    <label className="text-class">Social Media</label>
                     <input type="text"
                         className="form-control"
                         value={this.state.socialMedia}
                         onChange={this.onChangeSocialMedia}
                     />
+                    <br></br>
                 <Button variant="info" type="submit" value="Add User">Add Yourself!</Button>                
                 </form>
             </div>

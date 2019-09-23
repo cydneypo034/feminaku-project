@@ -2,8 +2,8 @@ import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import SailorMoon from './images2/sailor-moonhearts.gif';
 import Dawn from './images2/dawn-pokemon.gif';
-import Shiinoa from './images2/shiinoahiirage.gif';
-import Yumkeo from './images2/yumeko.gif';
+import Hana from './images2/hanamutou.gif';
+import Yumkeo from './images2/yumekojabami.gif';
 
 class Home extends React.Component {
     render() {
@@ -12,7 +12,7 @@ class Home extends React.Component {
                 <Carousel.Item className="car-images">
                     <img
                     className="sailormoon"
-                    width="1320"
+                    width="100%"
                     height="100%"
                     src={SailorMoon}
                     alt="Bulma"
@@ -21,7 +21,7 @@ class Home extends React.Component {
                 <Carousel.Item>
                     <img
                     className="Dawn"
-                    width="1320"
+                    width="100%"
                     height="100%"
 
                     src={Dawn}
@@ -30,18 +30,18 @@ class Home extends React.Component {
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
-                    className="Shiinoa"
-                    width="1320"
+                    className="Hana"
+                    width="100%"
                     height="100%"
 
-                    src={Shiinoa}
-                    alt="Shiinoa"
+                    src={Hana}
+                    alt="Hana"
                     />
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
                     className="Yumeko"
-                    width="1320"
+                    width="100%"
                     height="100%"
 
                     src={Yumkeo}

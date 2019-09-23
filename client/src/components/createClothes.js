@@ -1,7 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 import {Button} from 'react-bootstrap';
-import CoupleTree from './images2/maxresdefault.jpg';
+import Utena from './images2/kawaiigirl.jpg';
 
 
 class CreateClothes extends React.Component {
@@ -69,33 +69,34 @@ class CreateClothes extends React.Component {
     render() {
         return (
             <div>
-              <img className="about-background-image" src={CoupleTree} alt="town" width="100%" height="100%"/>
+              <img className="about-background-image" src={Utena} alt="town" width="100%" height="700px"/>
                 <h1 className="title-table2">★ Any Favorite Merch Stores? Enter Them! ★</h1>
                 <form className="this-form" onSubmit={this.handleSubmitInput}>
-                    <label>Store Name</label>
+                    <label className="text-class">Store Name</label>
                     <input type="text"
                         className="form-control"
                         value={this.state.storeName}
                         onChange={this.onChangeStoreName}
                     />
-                    <label>Favorite Character</label>
+                    <label className="text-class">Favorite Character</label>
                     <input type="text"
                         className="form-control"
                         value={this.state.favoriteCharacter}
                         onChange={this.onChangeFavoriteCharacter}
                     />
-                    <label>Favorite Accessory</label>
+                    <label className="text-class">Favorite Accessory</label>
                     <input type="text"
                         className="form-control"
                         value={this.state.favoriteAccessory}
                         onChange={this.onChangeFavoriteAccesory}
                     />
-                    <label>Fashion Site</label>
+                    <label className="text-class">Fashion Site</label>
                     <input type="text"
                         className="form-control"
                         value={this.state.fashionSite}
                         onChange={this.onChangeFashionSite}
                     />
+                    <br></br>
                     <Button variant="info" type="submit" value="Add Clothes">Add Clothes</Button>
                 </form>
                 </div>

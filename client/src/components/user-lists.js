@@ -2,7 +2,7 @@ import React from 'react';
 import {Button} from 'react-bootstrap';
 import Axios from 'axios';
 import {Table} from 'react-bootstrap';
-import Blossoms from './images2/cuteanimegirl.png'
+import Blossoms from './images2/revolutionutena.jpg';
 
 
 class theseUsers extends React.Component {
@@ -80,7 +80,7 @@ class theseUsers extends React.Component {
             return (
 
                 <div>        
-                <img className="about-background-image" src={Blossoms} alt="town" width="100%" height="1050px"/>
+                <img className="about-background-image" src={Blossoms} alt="town" width="100%" height="100%"/>
                     <h1 className="title-table">Have a Look at our <br></br>Wonderful Community!</h1>
                     <div className="list-table-navtabs">
                     <Table striped bordered hover variant="light">

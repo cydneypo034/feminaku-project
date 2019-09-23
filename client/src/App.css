@@ -136,3 +136,7 @@
   left: 49%;
   transform: translate(-50%, -10%)
 }
+
+.text-class {
+  color: white;
+}
