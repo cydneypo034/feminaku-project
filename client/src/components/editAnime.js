@@ -1,7 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 import { Button } from 'react-bootstrap';
-import CoupleTree from './images2/cuteanimegirl.png';
+import GirlPink from './images2/cuteanimegirl.png';
 
 
 class editAnime extends React.Component {
@@ -78,7 +78,7 @@ class editAnime extends React.Component {
     render() {
         return (
             <div>
-            <img className="about-background-image" src={CoupleTree} alt="town" width="100%" height="100%"/>
+            <img className="about-background-image" src={GirlPink} alt="town" width="100%" height="100%"/>
                 <h1 className="title-table2">★ Need To Fix Anything? Edit It Here! ★</h1>
                 <form className="this-form" onSubmit={this.handleSubmitInput}>
                     <label className="text-class2">Name</label>

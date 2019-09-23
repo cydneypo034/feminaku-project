@@ -1,7 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 import {Button} from 'react-bootstrap';
-import CoupleTree from './images2/maxresdefault.jpg';
+import PurpleSunset from './images2/maxresdefault.jpg';
 
 class CreateUsers extends React.Component {
 
@@ -12,6 +12,7 @@ class CreateUsers extends React.Component {
         this.onChangeCityAndState = this.onChangeCityAndState.bind(this)
         this.onChangeAge = this.onChangeAge.bind(this)
         this.onChangeSocialMedia = this.onChangeSocialMedia.bind(this)
+        this.handleSubmitInput = this.handleSubmitInput.bind(this)
 
         this.state = {
             name: ' ',
@@ -63,12 +64,13 @@ class CreateUsers extends React.Component {
             age: 0,
             socialMedia: ''
         })
+
     }
 
     render() {
         return (
             <div >
-            <img className="about-background-image" src={CoupleTree} alt="town" width="100%" height="100%"/>
+            <img className="about-background-image" src={PurpleSunset} alt="town" width="100%" height="100%"/>
                 <h1 className="title-table2">★ Come Join the Family! Enter Your Info! ★</h1>
                 <form className="this-form" onSubmit={this.handleSubmitInput}>
                     <label className="text-class">Name</label>
@@ -96,6 +98,7 @@ class CreateUsers extends React.Component {
                         onChange={this.onChangeSocialMedia}
                     />
                     <br></br>
+                
                 <Button variant="info" type="submit" value="Add User">Add Yourself!</Button>                
                 </form>
             </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 import {Button} from 'react-bootstrap';
-import Utena from './images2/kawaiigirl.jpg';
+import KawaiiGirl from './images2/kawaiigirl.jpg';
 
 
 class EditClothes extends React.Component {
@@ -77,7 +77,7 @@ class EditClothes extends React.Component {
     render() {
         return (
             <div>
-             <img className="about-background-image" src={Utena} alt="town" width="100%" height="700px"/>
+             <img className="about-background-image" src={KawaiiGirl} alt="town" width="100%" height="700px"/>
                 <h1 className="title-table2">★ Need to Fix Anything? Edit It Here! ★</h1>
                 <form className="this-form" onSubmit={this.handleSubmitInput}>
                     <label className="text-class2">Store Name</label>

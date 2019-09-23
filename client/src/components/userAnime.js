@@ -2,7 +2,7 @@ import React from 'react';
 import Axios from 'axios';
 import { Button } from 'react-bootstrap';
 import { Table } from 'react-bootstrap';
-import Blossoms from './images2/revolutionutena.jpg'
+import Utena from './images2/revolutionutena.jpg'
 
 
 
@@ -77,7 +77,7 @@ class UsersAnime extends React.Component {
             return (
         
                 <div>
-                    <img className="about-background-image" src={Blossoms} alt="town" width="100%" height="100%"/>
+                    <img className="about-background-image" src={Utena} alt="town" width="100%" height="100%"/>
                     <h1 className="title-table">Do You have a Favorite <br></br> Anime? List it Here!</h1>
                     <div className="list-table-navtabs">
                     <Table striped bordered hover variant="light">  

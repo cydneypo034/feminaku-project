@@ -82,7 +82,6 @@ class theseUsers extends React.Component {
                 <div>        
                 <img className="about-background-image" src={Utena} alt="town" width="100%" height="100%"/>
                     <h1 className="title-table">Have a Look at our <br></br>Wonderful Community!</h1>
-
                     <div className="list-table-navtabs">
                     <Table striped bordered hover variant="light">
                         <tbody>
