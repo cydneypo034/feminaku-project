@@ -77,7 +77,7 @@ class EditClothes extends React.Component {
     render() {
         return (
             <div>
-             <img className="about-background-image" src={KawaiiGirl} alt="town" width="100%" height="700px"/>
+             <img className="about-background-image" src={KawaiiGirl} alt="town" width="100%" height="100%"/>
                 <h1 className="title-table2">★ Need to Fix Anything? Edit It Here! ★</h1>
                 <form className="this-form" onSubmit={this.handleSubmitInput}>
                     <label className="text-class2">Store Name</label>
