@@ -1,6 +1,8 @@
 import React from 'react';
 import Axios from 'axios';
 import {Button} from 'react-bootstrap';
+import Utena from './images2/kawaiigirl.jpg';
+
 
 class EditClothes extends React.Component {
 
@@ -74,11 +76,10 @@ class EditClothes extends React.Component {
 
     render() {
         return (
-            <div className="container">
-
-                <h1 className="fem-welcome">Need to Fix Anything? Edit It Here!</h1>
-                <div className="form-wrap">
-                <form onSubmit={this.handleSubmitInput}>
+            <div>
+             <img className="about-background-image" src={Utena} alt="town" width="100%" height="700px"/>
+                <h1 className="title-table2">★ Need to Fix Anything? Edit It Here! ★</h1>
+                <form className="this-form" onSubmit={this.handleSubmitInput}>
                     <label>Store Name</label>
                     <input type="text"
                         className="form-control"
@@ -108,7 +109,6 @@ class EditClothes extends React.Component {
                     <Button variant="info" type="submit" value="Edit Clothes">Edit Clothes</Button>
                 </form>
                 </div>
-            </div>
         )
     }
 }

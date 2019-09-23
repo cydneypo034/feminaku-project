@@ -1,6 +1,8 @@
 import React from 'react';
 import Axios from 'axios';
 import { Button } from 'react-bootstrap';
+import CoupleTree from './images2/cuteanimegirl.png';
+
 
 class editAnime extends React.Component {
     constructor(props) {
@@ -76,8 +78,9 @@ class editAnime extends React.Component {
     render() {
         return (
             <div>
-                <h1 className="fem-welcome">Need To Fix Anything? Edit It Here!</h1>
-                <form onSubmit={this.handleSubmitInput}>
+            <img className="about-background-image" src={CoupleTree} alt="town" width="100%" height="100%"/>
+                <h1 className="title-table2">★ Need To Fix Anything? Edit It Here! ★</h1>
+                <form className="this-form" onSubmit={this.handleSubmitInput}>
                     <label>Name</label>
                     <input type="text"
                         className="form-control"
@@ -102,6 +105,7 @@ class editAnime extends React.Component {
                         value={this.state.characterCosplay}
                         onChange={this.onChangeCharacterCosplay}
                     />
+                    <br></br>
                     <Button variant="info" type="submit" value="Edit Anime">Edit Anime</Button>
                 </form>
             </div>
