@@ -66,6 +66,8 @@ class CreateAnime extends React.Component {
             favoriteCharacter: '',
             characterCosplay: ''
         })
+
+        this.props.history.push('./allanime')
     }
 
     render() {

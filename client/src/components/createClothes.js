@@ -64,6 +64,8 @@ class CreateClothes extends React.Component {
             favoriteAccessory: ' ',
             fashionSite: ''
         })
+
+        this.props.history.push("./allclothes")
     }
 
     render() {
