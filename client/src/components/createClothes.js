@@ -72,25 +72,25 @@ class CreateClothes extends React.Component {
               <img className="about-background-image" src={Utena} alt="town" width="100%" height="700px"/>
                 <h1 className="title-table2">★ Any Favorite Merch Stores? Enter Them! ★</h1>
                 <form className="this-form" onSubmit={this.handleSubmitInput}>
-                    <label className="text-class">Store Name</label>
+                    <label className="text-class2">Store Name</label>
                     <input type="text"
                         className="form-control"
                         value={this.state.storeName}
                         onChange={this.onChangeStoreName}
                     />
-                    <label className="text-class">Favorite Character</label>
+                    <label className="text-class2">Favorite Character</label>
                     <input type="text"
                         className="form-control"
                         value={this.state.favoriteCharacter}
                         onChange={this.onChangeFavoriteCharacter}
                     />
-                    <label className="text-class">Favorite Accessory</label>
+                    <label className="text-class2">Favorite Accessory</label>
                     <input type="text"
                         className="form-control"
                         value={this.state.favoriteAccessory}
                         onChange={this.onChangeFavoriteAccesory}
                     />
-                    <label className="text-class">Fashion Site</label>
+                    <label className="text-class2">Fashion Site</label>
                     <input type="text"
                         className="form-control"
                         value={this.state.fashionSite}

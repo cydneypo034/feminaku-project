@@ -81,25 +81,25 @@ class editAnime extends React.Component {
             <img className="about-background-image" src={CoupleTree} alt="town" width="100%" height="100%"/>
                 <h1 className="title-table2">★ Need To Fix Anything? Edit It Here! ★</h1>
                 <form className="this-form" onSubmit={this.handleSubmitInput}>
-                    <label>Name</label>
+                    <label className="text-class2">Name</label>
                     <input type="text"
                         className="form-control"
                         value={this.state.name}
                         onChange={this.onChangeName}
                     />
-                    <label>Favorite Season</label>
+                    <label className="text-class2">Favorite Season</label>
                     <input type="text"
                         className="form-control"
                         value={this.state.favoriteSeason}
                         onChange={this.onChangeFavoriteSeason}
                     />
-                    <label>Favorite Character</label>
+                    <label className="text-class2">Favorite Character</label>
                     <input type="text"
                         className="form-control"
                         value={this.state.favoriteCharacter}
                         onChange={this.onChangeFavoriteCharacter}
                     />
-                    <label>Would You Cosplay Them?</label>
+                    <label className="text-class2">Would You Cosplay Them?</label>
                     <input type="text"
                         className="form-control"
                         value={this.state.characterCosplay}
