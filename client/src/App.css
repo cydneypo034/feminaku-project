@@ -91,6 +91,10 @@
 }
 
 .list-table-navtabs {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
   position: absolute;
   top: 64%;
   left: 49%;

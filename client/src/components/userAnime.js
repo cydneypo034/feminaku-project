@@ -1,7 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
-import { Button } from 'react-bootstrap';
-import { Table } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 import Utena from './images2/revolutionutena.jpg'
 
 
@@ -28,18 +27,20 @@ class UsersAnime extends React.Component {
 
     animeList() {
         const Anime = props => (
-            <tr>
-                <td>{props.anime.name}</td>
-                <td>{props.anime.favoriteSeason}</td>
-                <td>{props.anime.favoriteCharacter}</td>
-                <td>{props.anime.characterCosplay}</td>
-
-                <td>
+            <Card style={{ width: '18rem' }}>
+            <Card.Body>
+                <Card.Title>{props.anime.name}</Card.Title>
+            <Card.Text>
+                Anime Name: {props.anime.name} <br></br>
+                Favorite Season: {props.anime.favoriteSeason} <br></br>
+                Favorite Character: {props.anime.favoriteCharacter} <br></br>
+                Would You Cosplay Them?: {props.anime.characterCosplay} <br></br>
+            </Card.Text>
                 <Button variant="primary" onClick={() => this.edit(props.anime._id)}>Edit Anime</Button>
                 <span></span>
                 <Button variant="danger" onClick={() => this.delete(props.anime._id)}>Delete Anime</Button>
-                </td>
-            </tr>
+            </Card.Body>
+            </Card>
 )
         return this.state.anime.map(function(animeDisplayed){
             return <Anime anime={animeDisplayed} />;
@@ -80,17 +81,9 @@ class UsersAnime extends React.Component {
                     <img className="about-background-image" src={Utena} alt="town" width="100%" height="100%" />
                     <h1 className="title-table">Do You have a Favorite <br></br> Anime? List it Here!</h1>
                     <div className="list-table-navtabs">
-                    <Table striped bordered hover variant="light">  
-                        <tbody>
-                            <tr className="color-names-table">
-                                <td>Name</td>
-                                <td>Favorite Season</td>
-                                <td>Favorite Character</td>
-                                <td>Would You Cosplay Them?</td>
-                            </tr> 
+                     
                             { this.animeList()}
-                        </tbody>
-                    </Table>
+
                     </div>
                 </div>
             )
