@@ -12,7 +12,6 @@ import EditAnime from './components/editAnime.js';
 import CreateClothes from './components/createClothes.js';
 import UsersClothes from './components/user-clothes.js';
 import EditClothes from './components/editClothes.js';
-import SearchForm from './components/SearchBar';
 
 class App extends React.Component {
   render() {
@@ -42,7 +41,6 @@ class App extends React.Component {
                   </li>
                   
                 </ul>
-                <SearchForm />
               </div>
             </nav>
               <Route path="/" exact component={user} />

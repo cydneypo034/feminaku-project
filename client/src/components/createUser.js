@@ -65,6 +65,8 @@ class CreateUsers extends React.Component {
             socialMedia: ''
         })
 
+        this.props.history.push('/allusers');
+
     }
 
     render() {

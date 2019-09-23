@@ -9,6 +9,9 @@ class About extends React.Component {
                 <p className="about-paragraph">Feminaku strives to provide a safe space for women 
                 who love all genres of anime. Our community is sacred space for connecting with and learning
                 from one another. Feel free to connect with other users and let's share our love of anime together.</p>
+
+
+                
             </div>
         )
     }
