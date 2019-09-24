@@ -27,7 +27,7 @@ class theseUsers extends React.Component {
 
     userList() {
        const User = props => (
-        <Card style={{ width: '18rem' }}>
+        <Card style={{ width: '20rem' }}>
             <Card.Img variant="top" src={SailorUsagi} width="286px" height="180px"/>
             <Card.Body>
                 <Card.Title>{props.user.name}</Card.Title>

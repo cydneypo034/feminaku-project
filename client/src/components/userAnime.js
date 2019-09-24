@@ -1,7 +1,8 @@
 import React from 'react';
 import Axios from 'axios';
 import { Button, Card } from 'react-bootstrap';
-import Utena from './images2/revolutionutena.jpg'
+import Utena from './images2/revolutionutena.jpg';
+import BulmaDBZ from './images2/bulmadbz.gif'
 
 
 
@@ -27,7 +28,8 @@ class UsersAnime extends React.Component {
 
     animeList() {
         const Anime = props => (
-            <Card style={{ width: '18rem' }}>
+            <Card style={{ width: '20rem' }}>
+                <Card.Img variant="top" src={BulmaDBZ} width="286px" height="180px"/>
             <Card.Body>
                 <Card.Title>{props.anime.name}</Card.Title>
             <Card.Text>

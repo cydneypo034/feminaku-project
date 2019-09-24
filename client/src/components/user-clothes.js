@@ -1,8 +1,8 @@
 import React from 'react';
-import {Button} from 'react-bootstrap';
+import {Button, Card} from 'react-bootstrap';
 import Axios from 'axios';
-import {Table} from 'react-bootstrap';
 import Utena from './images2/revolutionutena.jpg';
+import MyHero from './images2/ouran.jpeg';
 
 class theseClothes extends React.Component {
 
@@ -26,19 +26,23 @@ class theseClothes extends React.Component {
 
     clothesList() {
         const Clothes = props => (
-            <tr>
-                <td>{props.clothes.storeName}</td>
-                <td>{props.clothes.favoriteCharacter}</td>
-                <td>{props.clothes.favoriteAccessory}</td>
-                <td>{props.clothes.fashionSite}</td>
-        
-                <td>
+            <Card style={{ width: '18rem'}}>
+                <Card.Img variant="top" src={MyHero} width="186px" height="180px"/>
+
+                <Card.Body>
+                <Card.Title>{props.clothes.storeName}</Card.Title>
+                <Card.Text>
+                Store Name:{props.clothes.storeName}<br></br>
+                Favorite Character: {props.clothes.favoriteCharacter}<br></br>
+                Favorite Accessory: {props.clothes.favoriteAccessory}<br></br>
+                Fashion Website: {props.clothes.fashionSite}<br></br>
+                </Card.Text>
                 <Button variant="primary" onClick={() => this.edit(props.clothes._id)}>Edit Info</Button>
                 <span></span>
                 <Button variant="danger" onClick={() => this.delete(props.clothes._id)}>Delete Info</Button>
-                </td>
-        
-            </tr>
+                </Card.Body>
+            </Card>
+       
         )
         return this.state.clothes.map(function(currentClothes, i){
             return <Clothes clothes={currentClothes} key={i} />;
@@ -80,17 +84,9 @@ class theseClothes extends React.Component {
                  <img className="about-background-image" src={Utena} alt="town" width="100%" height="100%" />
                     <h1 className="title-table">All of our Favorite <br></br> Merchandise Places!</h1>
                     <div className="list-table-navtabs">
-                    <Table striped bordered hover variant="light">
-                        <tbody>
-                            <tr className="color-names-table">
-                                <td>Store Name</td>
-                                <td>Favorite Character</td>
-                                <td>Favorite Accessory</td>
-                                <td>Fashion Website</td>
-                            </tr> 
+                    
                             {this.clothesList()}
-                        </tbody>
-                    </Table>
+                
                     </div>
                 </div>
             )
