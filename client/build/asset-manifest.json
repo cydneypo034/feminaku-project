@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6906017a.chunk.css",
+    "main.js": "/static/js/main.3825a774.chunk.js",
+    "main.js.map": "/static/js/main.3825a774.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a7ca617d.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a7ca617d.js.map",
+    "static/css/2.266e55a5.chunk.css": "/static/css/2.266e55a5.chunk.css",
+    "static/js/2.fae3c59c.chunk.js": "/static/js/2.fae3c59c.chunk.js",
+    "static/js/2.fae3c59c.chunk.js.map": "/static/js/2.fae3c59c.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.7a45c51d25eb87a75efd350e7144995e.js": "/precache-manifest.7a45c51d25eb87a75efd350e7144995e.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.266e55a5.chunk.css.map": "/static/css/2.266e55a5.chunk.css.map",
+    "static/css/main.6906017a.chunk.css.map": "/static/css/main.6906017a.chunk.css.map",
+    "static/media/bulmadbz.gif": "/static/media/bulmadbz.75cd6d21.gif",
+    "static/media/cuteanimegirl.png": "/static/media/cuteanimegirl.0a08e446.png",
+    "static/media/dawn-pokemon.gif": "/static/media/dawn-pokemon.46019cd1.gif",
+    "static/media/hanamutou.gif": "/static/media/hanamutou.2e9d1ce4.gif",
+    "static/media/howlandsohpie.gif": "/static/media/howlandsohpie.444629fe.gif",
+    "static/media/kawaiigirl.jpg": "/static/media/kawaiigirl.6b5f8326.jpg",
+    "static/media/maxresdefault.jpg": "/static/media/maxresdefault.7a7dcfa6.jpg",
+    "static/media/revolutionutena.jpg": "/static/media/revolutionutena.efd5f314.jpg",
+    "static/media/sailor-moonhearts.gif": "/static/media/sailor-moonhearts.a2648d6f.gif",
+    "static/media/sailorusagi.jpg": "/static/media/sailorusagi.80015698.jpg"
+  }
+}
