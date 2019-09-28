@@ -11,6 +11,7 @@
 const express = require('express')
 const app = express()
 const methodOverride = require('method-override')
+const path = require('path')
 
 /* Step 2
  * 
@@ -74,7 +75,7 @@ app.use('/api/clothes', clothesRouter)
  */
 
  app.get('/*', (req, res) => {
-     res.sendFile(`${__dirname}/client/build/index.html`)
+     res.sendFile(path.resolve(__dirname, client, build, index.html);
  })
 const PORT = process.env.PORT || 3000 
 
