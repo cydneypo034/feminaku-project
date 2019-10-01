@@ -29,7 +29,7 @@
 ---
 **Deployed Application**
 
-You can view my application via Heroku [**here**](http://google.com).
+You can view my application via Heroku [**here**](https://damp-dusk-63962.herokuapp.com/).
 
 ---
 
