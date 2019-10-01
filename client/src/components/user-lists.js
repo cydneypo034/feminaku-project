@@ -53,28 +53,13 @@ class theseUsers extends React.Component {
     }
 
     delete(id) {
-        Axios.delete('http://localhost:3000/api/users/'+id)
-        .then(response => {
-            let userss = this.state.userss;
-            let index = -1
-            let counter = 0;
-            for (let user of userss){
-                if(user._id === id){
-                    index = counter;
-                    break
-                }
-                counter++;
-            }
-            if(index !== -1){
-                userss.splice(index, 1);
-                this.setState({
-                    userss: userss
-                });
-            }
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
+        fetch('http://localhost:3000/api/users/'+ id ,
+        { method: "DELETE",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify(id)
+      }).then(res => res.json())
+
+      .then(res => console.log(id))
     }
 
    

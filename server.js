@@ -74,9 +74,7 @@ app.use('/api/clothes', clothesRouter)
  * NOTE: keep these lines at the bottom of the file 
  */
 
- app.get('/*', (req, res) => {
-     res.sendFile(path.resolve(__dirname, client, build, index.html);
- })
+
 const PORT = process.env.PORT || 3000 
 
 /* Step 6

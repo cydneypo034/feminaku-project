@@ -53,28 +53,13 @@ class UsersAnime extends React.Component {
     }
 
     delete(id) {
-        Axios.delete('http://localhost:3000/api/anime/'+id)
-        .then(response => {
-            let animes = this.state.animes;
-            let index = -1
-            let counter = 0;
-            for (let anime of animes){
-                if(anime._id === id){
-                    index = counter;
-                    break
-                }
-                counter++;
-            }
-            if(index !== -1){
-                animes.splice(index, 1);
-                this.setState({
-                    animes: animes
-                });
-            }
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
+        fetch('http://localhost:3000/api/anime/'+ id ,
+        { method: "DELETE",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify(id)
+      }).then(res => res.json())
+
+      .then(res => console.log(id))
     }
         render () {
             return (

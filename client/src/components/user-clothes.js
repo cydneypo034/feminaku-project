@@ -53,7 +53,36 @@ class theseClothes extends React.Component {
     }
 
     delete(id) {
-        Axios.delete('http://localhost:3000/api/clothes/'+id)
+        fetch('http://localhost:3000/api/clothes/'+ id ,
+        { method: "DELETE",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify(id)
+      }).then(res => res.json())
+
+      .then(res => console.log(id))
+    }
+
+   
+        render () {
+            return (
+                <div>
+                 <img className="about-background-image" src={Utena} alt="town" width="100%" height="100%" />
+                    <h1 className="title-table">All of our Favorite <br></br> Merchandise Places!</h1>
+                    <div className="list-table-navtabs">
+                    
+                            {this.clothesList()}
+                
+                    </div>
+                </div>
+            )
+        }
+    }
+    
+    
+    export default theseClothes;
+
+    /*
+    Axios.delete('http://localhost:3000/api/clothes/'+id)
         .then(response => {
             let clothess = this.state.clothess;
             let index = -1
@@ -75,23 +104,4 @@ class theseClothes extends React.Component {
         .catch(function (error) {
             console.log(error);
         });
-    }
-
-   
-        render () {
-            return (
-                <div>
-                 <img className="about-background-image" src={Utena} alt="town" width="100%" height="100%" />
-                    <h1 className="title-table">All of our Favorite <br></br> Merchandise Places!</h1>
-                    <div className="list-table-navtabs">
-                    
-                            {this.clothesList()}
-                
-                    </div>
-                </div>
-            )
-        }
-    }
-    
-    
-    export default theseClothes;
+        */
