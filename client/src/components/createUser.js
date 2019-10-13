@@ -1,5 +1,4 @@
 import React from 'react';
-import Axios from 'axios';
 import {Button} from 'react-bootstrap';
 import PurpleSunset from './images2/maxresdefault.jpg';
 
@@ -54,9 +53,13 @@ class CreateUsers extends React.Component {
             age: this.state.age,
             socialMedia: this.state.socialMedia,
         };
-        //for using axios to grab the data from the api
-        Axios.post('http://localhost:3000/api/users', myNewUser)
-            .then(res => console.log(res.data))
+
+        fetch('/api/users', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(myNewUser)
+        }).then(res => res.json())
+
 
         this.setState({
             name: '',

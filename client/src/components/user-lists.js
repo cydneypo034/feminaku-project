@@ -1,6 +1,5 @@
 import React from 'react';
 import {Button, Card} from 'react-bootstrap';
-import Axios from 'axios';
 import Utena from './images2/revolutionutena.jpg';
 import SailorUsagi from './images2/sailorusagi.jpg';
 
@@ -15,7 +14,8 @@ class theseUsers extends React.Component {
     }
 
     componentDidMount() {
-        Axios.get('http://localhost:3000/api/users')
+        fetch('/api/users')
+        .then(res => res.json())
         .then(response => {
             this.setState({ users: response.data})
         })

@@ -8,7 +8,6 @@ class Users extends React.Component {
         return (
             <div>
                 <Home />
-                <About />
 
             </div>
         )
