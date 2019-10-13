@@ -7,68 +7,6 @@ const clothesRouter = express.Router()
 
 //HTTP Requests
 // 
-clothesRouter.get('/', (req, res) => {
-    clothesApi.getAllClothes()
-    .then(clothes => {
-        res.json(clothes)
-    })
-    .catch(err => {
-        res.json({
-            confirmation: 'fail',
-            message: err.message
-        })
-    })
-})
-clothesRouter.get('/:clothesId', (req, res) => {
-    clothesApi.getOneClothes(req.params.clothesId)
-    .then(oneclothes => {
-        res.json(oneclothes)
-    })
-    .catch(err => {
-        res.json({
-            confirmation: 'fail',
-            message: err.message
-        })
-    })
-})
-clothesRouter.post('/', (req, res) => {
-    clothesApi.addNewClothes(req.body)
-    .then(newClothes => {
-        res.json(newClothes)
-    })
-    .catch(err => {
-        res.json({
-            confirmation: 'fail',
-            message: err.message
-        })
-    })
-})
-
-clothesRouter.put('/:clothesId', (req, res) => {
-    clothesApi.editClothes(req.params.clothesId, req.body)
-    .then(updatedClothes => {
-        res.json(updatedClothes)
-    })
-    .catch(err => {
-        res.json({
-            confirmation: 'fail',
-            massage: err.message
-        })
-    })
-})
-clothesRouter.delete('/:clothesId', (req, res) => {
-    clothesApi.deleteClothes(req.params.clothesId)
-    .then(deletedClothes => {
-        res.json(deletedClothes)
-    })
-    .catch(err => {
-        res.json({
-            confirmation: 'fail',
-            message: err.message
-        })
-    })
-})
-/*
 ///////////////////GET ALL USERS/////////////////////////////
 clothesRouter.get('/', function (req, res) {
     clothesApi.getAllClothes().then((clothes) => {
@@ -105,7 +43,7 @@ animeRouter.delete('/:animeId', function(req,res){
         res.send(noAnime);
     })
   })
-*/
+
 
 module.exports = {
     clothesRouter

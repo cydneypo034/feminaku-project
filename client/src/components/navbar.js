@@ -4,7 +4,8 @@ import { Nav, Navbar, NavDropdown,Form, FormControl,Button } from 'react-bootstr
 class Navigation extends React.Component {
     render() {
         return (
-            <Navbar bg="light" expand="lg">
+            <div>
+            <Navbar expand="lg">
                 <Navbar.Brand href="/" className="navbar-brand">Feminaku</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -26,7 +27,7 @@ class Navigation extends React.Component {
                     </Form>
                 </Navbar.Collapse>
                 </Navbar>
-                
+                </div>
         )
     }
 }

@@ -2,7 +2,6 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css'
 import "bootstrap/dist/css/bootstrap.min.css";
-import Nav from './components/navbar.js';
 import theseUsers from './components/user-lists.js'
 import createUser from './components/createUser.js';
 import editUser from './components/editUser.js';
@@ -13,10 +12,12 @@ import EditAnime from './components/editAnime.js';
 import CreateClothes from './components/createClothes.js';
 import UsersClothes from './components/user-clothes.js';
 import EditClothes from './components/editClothes.js';
+import Nav from './components/navbar.js';
 
 class App extends React.Component {
   render() {
     return (
+    <React.Fragment>
       <Router>
             <Nav />
             <Switch>
@@ -31,15 +32,9 @@ class App extends React.Component {
               <Route path="/createClothes" component={CreateClothes} />
               <Route path="/editclothes/:id" component={EditClothes} />
               </Switch>
-              <footer class="footer">
-  
-  <div class="content has-text-centered">
-    <p>
-      ©  2019 Feminaku Collective
-    </p>
-  </div>
-</footer>
-    </Router>
+             
+      </Router>
+    </React.Fragment>
 )     
   }
 }

@@ -36,12 +36,3 @@ module.exports = {
     getAllUsers,
     getOneUser
 }
-
-/*
-name: {type:String, trim: true, default: ''},
-    originCity: {type: String, trim: true, default: ''},
-    age: {type: Number, trim: true, default: ''},
-    instagram: {type: String, trim: true, default: ''},
-    favoriteAnime: {type: String, trim: true, default: ''},
-    favoriteFood: {type: String, trim: true, default: ''},
-*/
